@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Orbii API - Foodics Business Category Assignment Data Check API
+  version: 1.0.2
+  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+servers:
+- url: https://api.foodics.orbii.ai/
+  description: Production Server
+tags:
+- name: Data Check
+paths:
+  /Check-for-new-data-received:
+    get:
+      summary: Check for new data received
+      description: Fetches company name and email for recent data.
+      tags:
+      - Data Check
+      parameters:
+      - name: user
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Recent data received.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    company_name:
+                      type: string

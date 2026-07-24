@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: Orbii API - Foodics Business Category Assignment IBANs API
+  version: 1.0.2
+  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+servers:
+- url: https://api.foodics.orbii.ai/
+  description: Production Server
+tags:
+- name: IBANs
+paths:
+  /ibans:
+    get:
+      summary: Get distinct IBANs
+      description: Fetches all distinct IBANs.
+      tags:
+      - IBANs
+      parameters:
+      - name: user
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of distinct IBANs.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string

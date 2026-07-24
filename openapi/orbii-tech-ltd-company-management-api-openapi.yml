@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  title: Orbii API - Foodics Business Category Assignment Company Management API
+  version: 1.0.2
+  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+servers:
+- url: https://api.foodics.orbii.ai/
+  description: Production Server
+tags:
+- name: Company Management
+paths:
+  /add-company:
+    post:
+      summary: Add a new company
+      description: Adds a new company, client, email, and company ID.
+      tags:
+      - Company Management
+      parameters:
+      - name: company_id
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: company_name
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: client
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: email
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: user
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: Missing parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

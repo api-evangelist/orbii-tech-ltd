@@ -1,0 +1,168 @@
+openapi: 3.0.0
+info:
+  title: Orbii API - Foodics Business Category Assignment Rewaa Risk Assessment API
+  version: 1.0.2
+  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+servers:
+- url: https://api.foodics.orbii.ai/
+  description: Production Server
+tags:
+- name: Rewaa Risk Assessment
+paths:
+  /Rewaa_Risk_Assessment:
+    get:
+      summary: Risk Assessment data
+      operationId: getRewaaRiskAssessment
+      parameters:
+      - $ref: '#/components/parameters/UserQ'
+      - $ref: '#/components/parameters/PasswordQ'
+      - $ref: '#/components/parameters/PageQ'
+      - $ref: '#/components/parameters/PageSizeQ'
+      - in: query
+        name: schema_name
+        schema:
+          type: string
+        description: Optional exact filter by schema_name
+      - in: query
+        name: category
+        schema:
+          type: string
+        description: Optional exact filter by Category
+      - in: query
+        name: kpi
+        schema:
+          type: string
+        description: Optional exact filter by KPI
+      - in: query
+        name: rule
+        schema:
+          type: string
+        description: Optional exact filter by Rule
+      responses:
+        '200':
+          description: Paged risk assessment rows
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedRiskAssessment'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+      tags:
+      - Rewaa Risk Assessment
+components:
+  parameters:
+    UserQ:
+      in: query
+      name: user
+      required: true
+      schema:
+        type: string
+      description: Database username (also used to derive container for some endpoints)
+    PasswordQ:
+      in: query
+      name: password
+      required: true
+      schema:
+        type: string
+      description: Database password
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
+    PageQ:
+      in: query
+      name: page
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      description: 1-based page index
+  schemas:
+    PagedRiskAssessment:
+      allOf:
+      - $ref: '#/components/schemas/PageEnvelope'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/RiskAssessmentRow'
+    PageEnvelope:
+      type: object
+      properties:
+        total_records:
+          type: integer
+        total_pages:
+          type: integer
+        current_page:
+          type: integer
+        page_size:
+          type: integer
+        data:
+          type: array
+          items:
+            type: object
+    RiskAssessmentRow:
+      type: object
+      properties:
+        schema_name:
+          type: string
+        Category:
+          type: string
+        KPI:
+          type: string
+        Rule:
+          type: string
+        Operator:
+          type: string
+        Threshold:
+          type: number
+          format: double
+        Weightage:
+          type: number
+          format: double
+        Value:
+          type: number
+          format: double
+        Passed:
+          type: boolean
+        Assessment:
+          type: string
+        RiskLowMessage:
+          type: string
+        RiskHighMessage:
+          type: string
+        Score:
+          type: number
+          format: double
+        Assessed_At:
+          type: string
+          format: date-time
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      example:
+        error: Missing 'user' or 'password' query parameters
+  responses:
+    BadRequest:
+      description: Bad request (missing/invalid parameters)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalError:
+      description: Unexpected server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
