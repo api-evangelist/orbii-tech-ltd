@@ -1,0 +1,71 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/orbii-tech-ltd-main-openapi.json (components.schemas)
+note: Entities are linked by soft id fields (clientname / customer_id / client_name / company_id), not
+  by OpenAPI $ref. Relationships below are inferred from those shared identifier fields.
+entities:
+- name: Client
+  key: clientname
+  fields:
+  - clientname
+  - date_added
+- name: CorporateData
+  key: company_id
+  fields:
+  - company_name
+  - email
+  - bank name
+- name: Transaction
+  key: iban
+  fields:
+  - date
+  - amount
+  - currency
+  - balance
+  - iban
+  - category
+  - subcategory
+  - risk level
+  - borrowername
+  relationships:
+  - type: belongs_to
+    target: Client
+    via: clientname
+  - type: belongs_to
+    target: Client
+    via: customer_id
+- name: KPI
+  fields:
+  - client_name
+  - kpi
+  - value
+  relationships:
+  - type: belongs_to
+    target: Client
+    via: client_name
+- name: PredictiveKPI
+  relationships:
+  - type: belongs_to
+    target: Client
+    via: client_name
+- name: InvoiceRiskAssessment
+  relationships:
+  - type: belongs_to
+    target: CorporateData
+    via: customer_id
+- name: InvoiceBandClassification
+  relationships:
+  - type: belongs_to
+    target: CorporateData
+    via: customer_id
+- name: InvoiceSuggestedLoan
+  fields:
+  - customer_id
+  - band
+  - annual_revenue
+  - multiplier
+  - suggested_loan
+  relationships:
+  - type: belongs_to
+    target: CorporateData
+    via: customer_id

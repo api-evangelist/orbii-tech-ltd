@@ -1,0 +1,36 @@
+# Orbii Tech Ltd
+
+> Orbii is a MENA-region credit and lending infrastructure company. Its API turns raw business financial data (bank transactions, invoices) into automated underwriting signals: KPIs, risk assessment, band classification, and suggested loan amounts. Fintech lenders, neobanks, and merchant platforms use it to launch and scale SME lending. Backed by Prosus, VentureSouq, Dash Ventures, and Sanabil 500.
+
+## APIs
+- [Orbii API (main)](https://api.docs.orbii.ai/): Transactions, clients, companies, KPIs, risk assessment, band classification, invoice-based lending. Base https://api.orbii.ai
+- [Orbii KSA API](https://api.docs.orbii.ai/ksa): Saudi Arabia regional deployment. Base https://api.sa.orbii.ai
+- [Orbii OMN API](https://api.docs.orbii.ai/): Oman regional deployment. Base https://api.om.orbii.ai
+- [Orbii API - Foodics](https://api.docs.orbii.ai/): Foodics POS partner deployment (micro-loan KPIs/scoring). Base https://api.foodics.orbii.ai
+- [Orbii API - Rewaa](https://api.docs.orbii.ai/): Rewaa retail partner deployment (eligibility, risk, band, loan amounts). Base https://api.rewaa.orbii.ai
+
+## Specs
+- openapi/orbii-tech-ltd-main-openapi.json (OpenAPI 3.0, 60 paths)
+- openapi/orbii-tech-ltd-ksa-openapi.json (OpenAPI 3.0, 49 paths)
+- openapi/orbii-tech-ltd-omn-openapi.json (OpenAPI 3.0, 49 paths)
+- openapi/orbii-tech-ltd-foodics-openapi.json (OpenAPI 3.0, 15 paths)
+- openapi/orbii-tech-ltd-rewaa-openapi.json (OpenAPI 3.0, 13 paths)
+
+## Enrichment artifacts
+- authentication/orbii-tech-ltd-authentication.yml (user/password query-parameter credentials; no securitySchemes declared)
+- conventions/orbii-tech-ltd-conventions.yml (pagination page/page_size; flat {error} envelope; per-region hosts)
+- errors/orbii-tech-ltd-problem-types.yml (400/404/409/500)
+- data-model/orbii-tech-ltd-data-model.yml (Client, CorporateData, Transaction, KPI, Invoice* entities)
+- lifecycle/orbii-tech-ltd-lifecycle.yml (SwaggerHub version registry)
+- conformance/orbii-tech-ltd-conformance.yml
+- mcp/orbii-tech-ltd-mcp.yml (candidate tool list)
+- agentic-access/orbii-tech-ltd-agentic-access.yml
+- security/orbii-tech-ltd-domain-security.yml
+- skills/ (Agent Skills grounded in Rewaa operations)
+
+## Docs
+- [Developer documentation](https://api.docs.orbii.ai/)
+- [SwaggerHub organization](https://app.swaggerhub.com/apis/orbii.ai)
+- [About Orbii](https://www.orbii.ai/about-us)
+- [News](https://www.orbii.ai/news)
+- [Slack community](https://join.slack.com/t/orbii/shared_invite/zt-3dyey2n3l-6E880uPZ33_TsUPW3XMgkQ)

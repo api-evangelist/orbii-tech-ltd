@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/*-openapi.json + SwaggerHub (orbii.ai)
+versioning:
+  scheme: document-version-per-deployment
+  current:
+    main: 1.0.5-oas3
+    ksa: 1.0.3
+    omn: 1.0.3
+    foodics: 1.0.2
+    rewaa: 1.0.4
+  registry: https://app.swaggerhub.com/apis/orbii.ai
+deprecation:
+  policy_documented: false
+  sunset_header: false
+  deprecated_operations: []
+sla:
+  documented: false
+status_page: null
+notes: No public status page, deprecation policy, or SLA located as of the enrichment date. Specs are
+  published and versioned on SwaggerHub under the orbii.ai organization.

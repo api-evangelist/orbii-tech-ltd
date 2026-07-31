@@ -1,0 +1,250 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/*-openapi.json
+server:
+  name: orbii
+  transport: http
+  note: No official hosted MCP server located. Candidate tool list derived from published OpenAPI operations.
+tool_count: 191
+tools:
+- name: get_
+  description: Welcome message
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /
+- name: get_Micro_Loan_Baseline_Eligibility_Raw
+  description: Get paginated baseline eligibility raw numbers
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Baseline_Eligibility_Raw
+- name: get_Micro_Loan_Business_Stability_And_Risk_Raw
+  description: Get paginated business stability and risk raw numbers
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Business_Stability_And_Risk_Raw
+- name: get_Micro_Loan_Industry_And_Seasonal_Trends_Raw
+  description: Get paginated industry and seasonal trends raw numbers
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Industry_And_Seasonal_Trends_Raw
+- name: get_Micro_Loan_Payment_Processing_And_Liquidity_Raw
+  description: Get paginated payment processing and liquidity raw numbers
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Payment_Processing_And_Liquidity_Raw
+- name: get_Micro_Loan_Revenue_And_Sales_Performance_Raw
+  description: Get paginated revenue and sales performance raw numbers
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Revenue_And_Sales_Performance_Raw
+- name: get_Micro_Loan_Raw_Numbers_Business_Reference
+  description: Get KPI raw and text data for a specific business reference
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Raw_Numbers/Business_Reference
+- name: get_Micro_Loan_KPI_Rules
+  description: Get all KPI rules
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_KPI_Rules
+- name: get_Micro_Loan_Risk_Assessment
+  description: Get paginated full risk assessment data
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Risk_Assessment
+- name: get_Micro_Loan_Risk_Assessment_Business_Reference
+  description: Get risk assessment for a specific business reference
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Risk_Assessment/{Business_Reference}
+- name: get_Micro_Loan_Final_Band_Classification
+  description: Get paginated final band classification
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Final_Band_Classification
+- name: get_Micro_Loan_Final_Band_Classification_Business_Reference
+  description: Get final band classification for a specific business reference
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Final_Band_Classification/Business_Reference
+- name: post_Micro_Loan_UpdateKpiRules
+  description: Update KPI rule threshold
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#POST /Micro_Loan_UpdateKpiRules
+- name: post_Micro_Loan_Rerun_Assessment
+  description: Trigger Risk Assessment Pipeline
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#POST /Micro_Loan_Rerun_Assessment
+- name: get_Micro_Loan_Loan_Amounts
+  description: Get paginated micro loan amounts
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#GET /Micro_Loan_Loan_Amounts
+- name: post_Micro_Loan_Loan_Amounts
+  description: Recalculate loan amounts and return a paginated page
+  source_operation: openapi/orbii-tech-ltd-foodics-openapi.json#POST /Micro_Loan_Loan_Amounts
+- name: get_
+  description: Welcome message
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /
+- name: get_clients
+  description: Get all clients
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /clients
+- name: get_transactions
+  description: Retrieve all transactions
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions
+- name: get_transactions_customer_customer_id
+  description: Retrieve transactions for a specific customer ID
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/customer/{customer_id}
+- name: get_transactions_date_date
+  description: Retrieve transactions for a specific date
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/date/{date}
+- name: get_transactions_daterange
+  description: Get transaction date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/daterange
+- name: get_transactions_range
+  description: Get transactions between a date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/range
+- name: get_transactions_clientname
+  description: Retrieve transactions for a specific client
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/{clientname}
+- name: get_transactions_clientname_date_date
+  description: Get transactions for a client on a specific date
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/{clientname}/date/{date}
+- name: get_transactions_clientname_daterange
+  description: Get transaction date range for a specific client
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/{clientname}/daterange
+- name: get_transactions_clientname_range
+  description: Get transactions for a client between a date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/{clientname}/range
+- name: get_ibans
+  description: Get distinct IBANs
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /ibans
+- name: get_transactions_iban_iban
+  description: Get transactions for a specific IBAN
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/iban/{iban}
+- name: get_categories_clientname
+  description: Get distinct categories for a client
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /categories/{clientname}
+- name: get_subcategories_clientname
+  description: Get distinct subcategories for a client
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /subcategories/{clientname}
+- name: get_client_kpis_customer_customer_id
+  description: Retrieve client KPIs for a specific customer ID
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /client-kpis/customer/{customer_id}
+- name: get_predictive_kpis_customer_customer_id
+  description: Retrieve predictive KPIs for a specific customer ID
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /predictive-kpis/customer/{customer_id}
+- name: get_client_kpis
+  description: Get KPIs for all clients
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /client-kpis
+- name: get_client_kpis_clientname
+  description: Get KPIs for a specific client
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /client-kpis/{clientname}
+- name: get_predictive_kpis
+  description: Get predictive KPIs for all clients
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /predictive-kpis
+- name: get_predictive_kpis_clientname
+  description: Get predictive KPIs for a specific client
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /predictive-kpis/{clientname}
+- name: get_Check_for_new_data_received
+  description: Check for new data received
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /Check-for-new-data-received
+- name: post_add_company
+  description: Add a new company
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /add-company
+- name: get_pdf_list
+  description: Retrieve the list of PDFs with metadata and client details
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /pdf-list
+- name: get_pdf_list_from_date
+  description: Retrieve PDFs extracted on or after a specific datetime
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /pdf-list-from-date
+- name: post_pdf_upload
+  description: Upload multiple PDFs
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /pdf-upload
+- name: get_paged_transactions_customer_customer_id
+  description: Retrieve paginated transactions for a specific customer
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /paged-transactions/customer/{customer_id}
+- name: get_paged_transactions_clientname
+  description: Retrieve paginated transactions for a specific client
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /paged-transactions/{clientname}
+- name: get_transactions_with_merchant_customer_customer_id
+  description: Get transactions with merchant details for a customer
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions_with_merchant/customer/{customer_id}
+- name: get_paged_transactions_with_merchant_customer_customer_id
+  description: Get paginated transactions with merchant info by customer ID
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /paged-transactions_with_merchant/customer/{customer_id}
+- name: get_top_buyers_customer_customer_id
+  description: Get top buyers for a customer
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /top_buyers/customer/{customer_id}
+- name: get_top_sellers_customer_customer_id
+  description: Get top sellers for a customer
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /top_sellers/customer/{customer_id}
+- name: get_risk_assessment_customer_customer_id
+  description: Get risk assessment for a specific customer
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /risk_assessment/customer/{customer_id}
+- name: get_band_classification_customer_customer_id
+  description: Get band classification for a specific customer
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /band_classification/customer/{customer_id}
+- name: post_update_kpi_rule
+  description: Update a KPI rule threshold
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /update-kpi-rule
+- name: post_rerun_assessment
+  description: Reruns Assessment
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /rerun-assessment
+- name: post_start_pdf_extraction
+  description: Trigger PDF extraction pipeline
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /start-pdf-extraction
+- name: post_categorise_cheque_deposits
+  description: Categorise cheque deposits as Equity Transactions or Revenue
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /categorise-cheque-deposits
+- name: post_categorise_partner_transactions
+  description: Categorise partner transactions as Equity Transactions or Transfers
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /categorise-partner-transactions
+- name: get_assign_category
+  description: Get business categories with their subcategories
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /assign-category
+- name: post_assign_category
+  description: Submit customer business category
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /assign-category
+- name: post_log_lending
+  description: Log a lending decision from email
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#POST /log-lending
+- name: get_top_buyers_recent_customer_customer_id
+  description: Get top buyers for a customer in the last X months
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /top_buyers_recent/customer/{customer_id}
+- name: get_top_sellers_recent_customer_customer_id
+  description: Get top sellers for a customer in the last X months
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /top_sellers_recent/customer/{customer_id}
+- name: get_band_classification
+  description: Get band classification for all customers
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /band_classification
+- name: get_transactions_customer_customer_id_range
+  description: Get transactions for a customer within a date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions/customer/{customer_id}/range
+- name: get_paged_transactions_customer_customer_id_range
+  description: Get paginated transactions for a customer within a date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /paged-transactions/customer/{customer_id}/range
+- name: get_transactions_with_merchant_customer_customer_id_range
+  description: Get transactions-with-merchant for a customer within a date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /transactions_with_merchant/customer/{customer_id}/range
+- name: get_paged_transactions_with_merchant_customer_customer_id_ra
+  description: Get paginated transactions-with-merchant for a customer within a date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /paged-transactions_with_merchant/customer/{customer_id}/range
+- name: get_clients_range
+  description: Get clients added within a date range
+  source_operation: openapi/orbii-tech-ltd-ksa-openapi.json#GET /clients/range
+- name: get_
+  description: Welcome message
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /
+- name: get_clients
+  description: Get all clients
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /clients
+- name: get_transactions
+  description: Retrieve all transactions
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions
+- name: get_transactions_customer_customer_id
+  description: Retrieve transactions for a specific customer ID
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/customer/{customer_id}
+- name: get_transactions_date_date
+  description: Retrieve transactions for a specific date
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/date/{date}
+- name: get_transactions_daterange
+  description: Get transaction date range
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/daterange
+- name: get_transactions_range
+  description: Get transactions between a date range
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/range
+- name: get_transactions_clientname
+  description: Retrieve transactions for a specific client
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/{clientname}
+- name: get_transactions_clientname_date_date
+  description: Get transactions for a client on a specific date
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/{clientname}/date/{date}
+- name: get_transactions_clientname_daterange
+  description: Get transaction date range for a specific client
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/{clientname}/daterange
+- name: get_transactions_clientname_range
+  description: Get transactions for a client between a date range
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/{clientname}/range
+- name: get_ibans
+  description: Get distinct IBANs
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /ibans
+- name: get_transactions_iban_iban
+  description: Get transactions for a specific IBAN
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /transactions/iban/{iban}
+- name: get_categories_clientname
+  description: Get distinct categories for a client
+  source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /categories/{clientname}

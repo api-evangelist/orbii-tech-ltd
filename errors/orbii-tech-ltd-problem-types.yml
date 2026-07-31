@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/*-openapi.json (4xx/5xx responses)
+format: custom-json
+envelope:
+  media_type: application/json
+  shape:
+    error: string
+  example:
+    error: Invalid datetime format. Expected 'YYYY-MM-DD HH:MM:SS.sss'
+  note: Errors return a flat JSON object with a single "error" string. Not RFC 9457 problem+json.
+problems:
+- status: 400
+  title: Bad Request
+  occurrences: 102
+  descriptions:
+  - Bad Request
+  - Bad Request – invalid input or file
+  - Bad request
+  - Bad request (e.g., missing or invalid parameters).
+- status: 404
+  title: Not Found
+  occurrences: 8
+  descriptions:
+  - Customer ID not found.
+- status: 409
+  title: Conflict
+  occurrences: 4
+  descriptions:
+  - A pipeline is already running for this customer_id
+  - Pipeline already running for this customer
+- status: 500
+  title: Internal Server Error
+  occurrences: 116
+  descriptions:
+  - Database connection or execution error
+  - Database or server error
+  - Failed to trigger pipeline
+  - Internal Server Error

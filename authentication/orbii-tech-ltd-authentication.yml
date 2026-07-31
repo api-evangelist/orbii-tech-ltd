@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/ (query parameters)
+summary:
+  types:
+  - credentials-query
+  note: The published OpenAPI declares no components.securitySchemes and no global security. Operations
+    authenticate by passing user and password as query-string parameters. Credentials in query strings
+    are logged by proxies/servers and are not a recommended pattern; captured here as the provider publishes
+    it.
+schemes:
+- name: query-credentials
+  type: apiKey-like
+  in: query
+  parameters:
+  - user
+  - password
+  applied_to: per-operation (not global)
+  sources:
+  - orbii-tech-ltd-foodics-openapi.json
+  - orbii-tech-ltd-ksa-openapi.json
+  - orbii-tech-ltd-main-openapi.json
+  - orbii-tech-ltd-omn-openapi.json
+docs: https://api.docs.orbii.ai/

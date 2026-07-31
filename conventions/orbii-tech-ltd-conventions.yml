@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/*-openapi.json + https://api.docs.orbii.ai/
+authentication:
+  style: query-string credentials (user + password)
+  ref: authentication/orbii-tech-ltd-authentication.yml
+idempotency:
+  supported: false
+  note: No Idempotency-Key header or parameter is documented; write operations (POST) carry no idempotency
+    contract.
+pagination:
+  style: page-number
+  params:
+  - page
+  - page_size
+  applies_to: paged-transactions* endpoints
+  note: Non-paged list endpoints return the full result set.
+versioning:
+  scheme: per-region host + SwaggerHub document version
+  hosts:
+    main: https://api.orbii.ai
+    ksa: https://api.sa.orbii.ai
+    omn: https://api.om.orbii.ai
+    foodics: https://api.foodics.orbii.ai
+    rewaa: https://api.rewaa.orbii.ai
+  note: Regional deployments (KSA/OMN) and per-partner deployments (Foodics/Rewaa) are separate hosts,
+    each versioned as its own SwaggerHub document.
+error_envelope:
+  ref: errors/orbii-tech-ltd-problem-types.yml
+  shape:
+    error: string
+content_types:
+  request:
+  - application/json
+  - application/x-www-form-urlencoded
+  - multipart/form-data
+  response:
+  - application/json
+rate_limiting:
+  documented: false
+cross_links:
+- errors/orbii-tech-ltd-problem-types.yml
+- authentication/orbii-tech-ltd-authentication.yml
+- lifecycle/orbii-tech-ltd-lifecycle.yml

@@ -1,0 +1,15 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Orbii API - Foodics
+  version: 1.0.0
+extends: openapi/orbii-tech-ltd-foodics-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-07-20'
+    x-apievangelist-provider: orbii-tech-ltd
+    x-apievangelist-category: credit-lending-infrastructure
+- target: $.info
+  update:
+    x-apievangelist-notes: No securitySchemes declared; operations authenticate via user/password query
+      parameters. Errors use a flat {error} envelope (not RFC 9457).

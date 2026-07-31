@@ -1,8 +1,27 @@
 aid: orbii-tech-ltd
 name: Orbii Tech Ltd
-description: Orbii Tech Ltd is a company surfaced as a portfolio company of 500-global and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Orbii is a MENA-region credit and lending infrastructure company. Its API turns raw business
+  financial data - bank transactions and invoices - into automated underwriting signals: derived
+  KPIs, borrower risk assessment, credit band classification, and suggested loan amounts. Fintech
+  lenders, neobanks, and merchant platforms (Foodics, Rewaa) integrate a single API to launch and
+  scale SME lending products such as salary advance, merchant financing, working capital, embedded
+  lending, and BNPL, with regional deployments for Saudi Arabia (KSA) and Oman (OMN). Orbii raised
+  a $3.6M seed round backed by Prosus, VentureSouq, Dash Ventures, and Sanabil 500.
 url: https://raw.githubusercontent.com/api-evangelist/orbii-tech-ltd/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/6894ac031d066c1f144fb082/68bdc4495f740a290c12b9c4_dark.webp
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,15 +30,391 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Fintech
+- Lending
+- Credit Scoring
+- Underwriting
+- Embedded Finance
+- SME Finance
+- Risk
+- MENA
+- Financial Data
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: orbii-tech-ltd:orbii-tech-ltd-business-category-assignment-api
+  name: Orbii Tech Ltd Business Category Assignment API
+  description: >-
+    The Business Category Assignment API from Orbii Tech Ltd — 1 operation(s) for business category assignment.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Business Category Assignment
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-business-category-assignment-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-categories-api
+  name: Orbii Tech Ltd Categories API
+  description: The Categories API from Orbii Tech Ltd — 1 operation(s) for categories.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-categories-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-clients-api
+  name: Orbii Tech Ltd Clients API
+  description: The Clients API from Orbii Tech Ltd — 2 operation(s) for clients.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Clients
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-clients-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-company-management-api
+  name: Orbii Tech Ltd Company Management API
+  description: The Company Management API from Orbii Tech Ltd — 1 operation(s) for company management.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Company Management
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-company-management-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-data-check-api
+  name: Orbii Tech Ltd Data Check API
+  description: The Data Check API from Orbii Tech Ltd — 1 operation(s) for data check.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Data Check
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-data-check-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-general-api
+  name: Orbii Tech Ltd General API
+  description: The General API from Orbii Tech Ltd — 1 operation(s) for general.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - General
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-general-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-ibans-api
+  name: Orbii Tech Ltd IBANs API
+  description: The IBANs API from Orbii Tech Ltd — 1 operation(s) for ibans.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - IBANs
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-ibans-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-invoices-api
+  name: Orbii Tech Ltd Invoices API
+  description: The Invoices API from Orbii Tech Ltd — 11 operation(s) for invoices.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-invoices-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-kpis-api
+  name: Orbii Tech Ltd KPIs API
+  description: The KPIs API from Orbii Tech Ltd — 6 operation(s) for kpis.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - KPIs
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-kpis-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-lending-actions-api
+  name: Orbii Tech Ltd Lending Actions API
+  description: The Lending Actions API from Orbii Tech Ltd — 1 operation(s) for lending actions.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Lending Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-lending-actions-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-merchants-api
+  name: Orbii Tech Ltd Merchants API
+  description: The Merchants API from Orbii Tech Ltd — 8 operation(s) for merchants.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Merchants
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-merchants-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-micro-loan-api
+  name: Orbii Tech Ltd Micro Loan API
+  description: The Micro Loan API from Orbii Tech Ltd — 1 operation(s) for micro loan.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Micro Loan
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-micro-loan-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-orbii-api-rewaa-api
+  name: Orbii Tech Ltd Orbii API Rewaa API
+  description: The Orbii API Rewaa API from Orbii Tech Ltd — 1 operation(s) for orbii api rewaa.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Orbii API Rewaa
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-orbii-api-rewaa-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-pdfs-api
+  name: Orbii Tech Ltd PDFs API
+  description: The PDFs API from Orbii Tech Ltd — 4 operation(s) for pdfs.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - PDFs
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-pdfs-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-raw-numbers-api
+  name: Orbii Tech Ltd Raw Numbers API
+  description: The Raw Numbers API from Orbii Tech Ltd — 6 operation(s) for raw numbers.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Raw Numbers
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-raw-numbers-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-baseline-eligibility-raw-api
+  name: Orbii Tech Ltd Rewaa Baseline Eligibility Raw API
+  description: >-
+    The Rewaa Baseline Eligibility Raw API from Orbii Tech Ltd — 1 operation(s) for rewaa baseline eligibility
+    raw.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Baseline Eligibility Raw
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-baseline-eligibility-raw-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-business-stability-and-risk-raw-api
+  name: Orbii Tech Ltd Rewaa Business Stability And Risk Raw API
+  description: >-
+    The Rewaa Business Stability And Risk Raw API from Orbii Tech Ltd — 1 operation(s) for rewaa business
+    stability and risk raw.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Business Stability And Risk Raw
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-business-stability-and-risk-raw-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-final-band-classification-api
+  name: Orbii Tech Ltd Rewaa Final Band Classification API
+  description: >-
+    The Rewaa Final Band Classification API from Orbii Tech Ltd — 1 operation(s) for rewaa final band
+    classification.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Final Band Classification
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-final-band-classification-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-industry-and-seasonal-trends-raw-api
+  name: Orbii Tech Ltd Rewaa Industry And Seasonal Trends Raw API
+  description: >-
+    The Rewaa Industry And Seasonal Trends Raw API from Orbii Tech Ltd — 1 operation(s) for rewaa industry
+    and seasonal trends raw.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Industry And Seasonal Trends Raw
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-industry-and-seasonal-trends-raw-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-kpi-rules-api
+  name: Orbii Tech Ltd Rewaa KPI Rules API
+  description: The Rewaa KPI Rules API from Orbii Tech Ltd — 1 operation(s) for rewaa kpi rules.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa KPI Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-kpi-rules-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-loan-amounts-api
+  name: Orbii Tech Ltd Rewaa Loan Amounts API
+  description: The Rewaa Loan Amounts API from Orbii Tech Ltd — 1 operation(s) for rewaa loan amounts.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Loan Amounts
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-loan-amounts-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-payment-processing-and-liquidity-raw-api
+  name: Orbii Tech Ltd Rewaa Payment Processing And Liquidity Raw API
+  description: >-
+    The Rewaa Payment Processing And Liquidity Raw API from Orbii Tech Ltd — 1 operation(s) for rewaa
+    payment processing and liquidity raw.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Payment Processing And Liquidity Raw
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-payment-processing-and-liquidity-raw-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-revenue-and-sales-performance-raw-api
+  name: Orbii Tech Ltd Rewaa Revenue And Sales Performance Raw API
+  description: >-
+    The Rewaa Revenue And Sales Performance Raw API from Orbii Tech Ltd — 1 operation(s) for rewaa revenue
+    and sales performance raw.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Revenue And Sales Performance Raw
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-revenue-and-sales-performance-raw-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-rewaa-risk-assessment-api
+  name: Orbii Tech Ltd Rewaa Risk Assessment API
+  description: >-
+    The Rewaa Risk Assessment API from Orbii Tech Ltd — 1 operation(s) for rewaa risk assessment.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Rewaa Risk Assessment
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-rewaa-risk-assessment-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-risk-assessment-api
+  name: Orbii Tech Ltd Risk Assessment API
+  description: The Risk Assessment API from Orbii Tech Ltd — 10 operation(s) for risk assessment.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Risk Assessment
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-risk-assessment-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-run-assessment-api
+  name: Orbii Tech Ltd Run Assessment API
+  description: The Run Assessment API from Orbii Tech Ltd — 1 operation(s) for run assessment.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Run Assessment
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-run-assessment-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-scores-and-final-band-classification-api
+  name: Orbii Tech Ltd Scores and Final Band Classification API
+  description: >-
+    The Scores and Final Band Classification API from Orbii Tech Ltd — 2 operation(s) for scores and final
+    band classification.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Scores and Final Band Classification
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-scores-and-final-band-classification-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-subcategories-api
+  name: Orbii Tech Ltd Subcategories API
+  description: The Subcategories API from Orbii Tech Ltd — 1 operation(s) for subcategories.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Subcategories
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-subcategories-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-transactions-api
+  name: Orbii Tech Ltd Transactions API
+  description: The Transactions API from Orbii Tech Ltd — 16 operation(s) for transactions.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-transactions-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-updatekpirules-api
+  name: Orbii Tech Ltd UpdateKpiRules API
+  description: The UpdateKpiRules API from Orbii Tech Ltd — 1 operation(s) for updatekpirules.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - UpdateKpiRules
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-updatekpirules-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-zipped-csv-upload-api
+  name: Orbii Tech Ltd Zipped Csv Upload API
+  description: The Zipped Csv Upload API from Orbii Tech Ltd — 1 operation(s) for zipped csv upload.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - Zipped Csv Upload
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-zipped-csv-upload-api-openapi.yml
 common:
 - type: Website
-  url: https://orbii.ai
+  url: https://www.orbii.ai
+- type: DeveloperPortal
+  url: https://api.docs.orbii.ai/
+- type: Documentation
+  url: https://api.docs.orbii.ai/
+- type: APIReference
+  url: https://app.swaggerhub.com/apis/orbii.ai
+- type: Support
+  url: https://join.slack.com/t/orbii/shared_invite/zt-3dyey2n3l-6E880uPZ33_TsUPW3XMgkQ
+- type: Blog
+  url: https://www.orbii.ai/news
+- type: SignUp
+  url: https://calendly.com/d/dpn-3w9-ycj/30-minute-meeting
+- type: LinkedIn
+  url: https://www.linkedin.com/company/orbiiai
+- type: Authentication
+  url: authentication/orbii-tech-ltd-authentication.yml
+- type: Conventions
+  url: conventions/orbii-tech-ltd-conventions.yml
+- type: ErrorCatalog
+  url: errors/orbii-tech-ltd-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/orbii-tech-ltd-lifecycle.yml
+- type: Conformance
+  url: conformance/orbii-tech-ltd-conformance.yml
+- type: DataModel
+  url: data-model/orbii-tech-ltd-data-model.yml
+- type: MCPServer
+  url: mcp/orbii-tech-ltd-mcp.yml
+- type: LLMsTxt
+  url: llms/orbii-tech-ltd-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/orbii-tech-ltd-agentic-access.yml
+- type: DomainSecurity
+  url: security/orbii-tech-ltd-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 23
+  pass: local-v1

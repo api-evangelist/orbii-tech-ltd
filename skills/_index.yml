@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/orbii-tech-ltd-rewaa-openapi.json
+skills:
+- file: orbii-tech-ltd-rewaa-assessment.md
+  name: Run an Orbii Rewaa credit assessment
+  api: openapi/orbii-tech-ltd-rewaa-openapi.json
+  operations: [runAssessment, getRewaaRiskAssessment, getRewaaFinalBandClassification, getRewaaLoanAmounts]
+- file: orbii-tech-ltd-rewaa-kpi-signals.md
+  name: Retrieve Orbii Rewaa KPI signals
+  api: openapi/orbii-tech-ltd-rewaa-openapi.json
+  operations: [getRewaaBaselineEligibilityRaw, getRewaaRevenueAndSalesPerformanceRaw, getRewaaPaymentProcessingAndLiquidityRaw, getRewaaBusinessStabilityAndRiskRaw, getRewaaIndustryAndSeasonalTrendsRaw, getRewaaKpiRules]

@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/*-openapi.json
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: five OpenAPI 3.0.x documents published on SwaggerHub
+- id: oauth2
+  conforms: false
+  evidence: no oauth2 securityScheme declared
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors return a flat {error:string} object, not application/problem+json
+- id: pagination
+  conforms: true
+  evidence: page/page_size query parameters on paged-transactions endpoints
+- id: idempotency
+  conforms: false
+  evidence: no Idempotency-Key contract
+- id: json-api
+  conforms: false
