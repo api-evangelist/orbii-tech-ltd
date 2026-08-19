@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Scores and Final Band Classification API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Scores and Final Band Classification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get paginated final band classification",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Final_Band_Classification",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (must be >= 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (must be >= 1)"
+              }
+            ]
+          },
+          "docs": "Get paginated final band classification"
+        },
+        {
+          "info": {
+            "name": "Get final band classification for a specific business reference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Final_Band_Classification/Business_Reference",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "business_reference",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get final band classification for a specific business reference"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

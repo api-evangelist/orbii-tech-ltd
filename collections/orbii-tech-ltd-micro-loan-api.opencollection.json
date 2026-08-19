@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Micro Loan API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Micro Loan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get paginated micro loan amounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Loan_Amounts",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "Database username"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Database password"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get paginated micro loan amounts"
+        },
+        {
+          "info": {
+            "name": "Recalculate loan amounts and return a paginated page",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Loan_Amounts",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "user",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                },
+                {
+                  "name": "page",
+                  "value": ""
+                },
+                {
+                  "name": "page_size",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Recalculate loan amounts and return a paginated page"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

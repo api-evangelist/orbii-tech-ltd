@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "6fe911de-93b7-415c-baf1-000aa31f3025",
+      "name": "Rewaa Industry And Seasonal Trends Raw",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c73d714d-de07-4d69-b02f-e342819ef441",
+          "name": "Industry & Seasonal Trends (raw)",
+          "request": {
+            "name": "Industry & Seasonal Trends (raw)",
+            "description": {},
+            "url": {
+              "path": [
+                "Rewaa_Industry_And_Seasonal_Trends_Raw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username (also used to derive container for some endpoints)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "1-based page index"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000",
+                  "description": "Page size"
+                },
+                {
+                  "disabled": false,
+                  "key": "schema_name",
+                  "value": "<string>",
+                  "description": "Optional exact filter by schema_name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf2b7ca0-ce40-4794-ab40-78ecfccd4c67",
+              "name": "Paged industry & seasonal trends results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Industry_And_Seasonal_Trends_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 4081,\n  \"total_pages\": 8020,\n  \"current_page\": 1368,\n  \"page_size\": 6283,\n  \"data\": [\n    {\n      \"schema_name\": \"string\",\n      \"Industry_Name\": \"string\",\n      \"Industry_Stability_Score\": 8562.494762244107,\n      \"Business_Avg_Monthly_Revenue_SAR\": 6810.288232127412,\n      \"Industry_Avg_Monthly_Revenue_SAR\": 9978.24145747265,\n      \"Revenue_vs_Industry_Percentage\": 5843.83683264708,\n      \"Revenue_Variability_Percentage\": 1726.7981394927856,\n      \"Active_Months_Count\": 115.40200566500624,\n      \"Total_Branches\": 1106.662583622039,\n      \"Avg_Branches_in_Industry\": 3201.660781557997,\n      \"Branches_vs_Industry_Percentage\": 8954.602426453675,\n      \"Active_Months_Last_12\": 1040.53602640115,\n      \"Coverage_12M\": 8274.155228490454,\n      \"Data_Quality_12M\": 1482.3860017484803\n    },\n    {\n      \"schema_name\": \"string\",\n      \"Industry_Name\": \"string\",\n      \"Industry_Stability_Score\": 1059.0959155784562,\n      \"Business_Avg_Monthly_Revenue_SAR\": 4002.524511996497,\n      \"Industry_Avg_Monthly_Revenue_SAR\": 8870.51657777432,\n      \"Revenue_vs_Industry_Percentage\": 1970.4143853745315,\n      \"Revenue_Variability_Percentage\": 7531.421444586044,\n      \"Active_Months_Count\": 9440.472506232858,\n      \"Total_Branches\": 9141.62134269432,\n      \"Avg_Branches_in_Industry\": 3725.4132557786647,\n      \"Branches_vs_Industry_Percentage\": 768.1143303716975,\n      \"Active_Months_Last_12\": 9192.979976641895,\n      \"Coverage_12M\": 3056.7257432889496,\n      \"Data_Quality_12M\": 402.9696360125923\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7b3269cc-bf2a-44ec-8877-3d2183556e1a",
+              "name": "Bad request (missing/invalid parameters)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Industry_And_Seasonal_Trends_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bf17dae1-58fe-4ae6-acb1-501bf02cce97",
+              "name": "Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Industry_And_Seasonal_Trends_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c58cc974-cd16-41c8-bace-aadaca9a11a6",
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Industry And Seasonal Trends Raw API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

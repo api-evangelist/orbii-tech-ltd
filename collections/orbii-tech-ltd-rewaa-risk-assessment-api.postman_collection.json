@@ -1,0 +1,317 @@
+{
+  "item": [
+    {
+      "id": "755d58c0-4d44-495a-baa0-6c07019c28b9",
+      "name": "Rewaa Risk Assessment",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2bdcbea5-30d9-468c-8e2a-99f3895a5c2a",
+          "name": "Risk Assessment data",
+          "request": {
+            "name": "Risk Assessment data",
+            "description": {},
+            "url": {
+              "path": [
+                "Rewaa_Risk_Assessment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username (also used to derive container for some endpoints)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "1-based page index"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000",
+                  "description": "Page size"
+                },
+                {
+                  "disabled": false,
+                  "key": "schema_name",
+                  "value": "<string>",
+                  "description": "Optional exact filter by schema_name"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "Optional exact filter by Category"
+                },
+                {
+                  "disabled": false,
+                  "key": "kpi",
+                  "value": "<string>",
+                  "description": "Optional exact filter by KPI"
+                },
+                {
+                  "disabled": false,
+                  "key": "rule",
+                  "value": "<string>",
+                  "description": "Optional exact filter by Rule"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c8961da3-794c-4662-9a21-2837d263e89f",
+              "name": "Paged risk assessment rows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Risk_Assessment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "kpi",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rule",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 8085,\n  \"total_pages\": 7861,\n  \"current_page\": 4355,\n  \"page_size\": 4829,\n  \"data\": [\n    {\n      \"schema_name\": \"string\",\n      \"Category\": \"string\",\n      \"KPI\": \"string\",\n      \"Rule\": \"string\",\n      \"Operator\": \"string\",\n      \"Threshold\": 5893.979800512232,\n      \"Weightage\": 2016.9671370977605,\n      \"Value\": 370.5556745807803,\n      \"Passed\": true,\n      \"Assessment\": \"string\",\n      \"RiskLowMessage\": \"string\",\n      \"RiskHighMessage\": \"string\",\n      \"Score\": 9788.190782797768,\n      \"Assessed_At\": \"1981-11-26T18:56:02.475Z\"\n    },\n    {\n      \"schema_name\": \"string\",\n      \"Category\": \"string\",\n      \"KPI\": \"string\",\n      \"Rule\": \"string\",\n      \"Operator\": \"string\",\n      \"Threshold\": 7124.369255575322,\n      \"Weightage\": 8867.894324530555,\n      \"Value\": 2103.2659996537764,\n      \"Passed\": false,\n      \"Assessment\": \"string\",\n      \"RiskLowMessage\": \"string\",\n      \"RiskHighMessage\": \"string\",\n      \"Score\": 3929.281944026893,\n      \"Assessed_At\": \"2026-03-06T07:01:44.893Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1471c659-6b3c-430a-92be-2b91c5ec3e03",
+              "name": "Bad request (missing/invalid parameters)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Risk_Assessment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "kpi",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rule",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c890fb66-77ad-41c7-8a1b-5f9ad6c24056",
+              "name": "Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Risk_Assessment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "kpi",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rule",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7f33161a-2276-4826-a92e-f863df6d2321",
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Risk Assessment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

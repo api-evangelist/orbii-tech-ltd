@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "eeb83ab9-dce5-468c-9c58-c824a0215f49",
+      "name": "Rewaa Business Stability And Risk Raw",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "50ce6d65-40e0-4a51-bdac-cbea25c160c5",
+          "name": "Business Stability & Risk (raw)",
+          "request": {
+            "name": "Business Stability & Risk (raw)",
+            "description": {},
+            "url": {
+              "path": [
+                "Rewaa_Business_Stability_And_Risk_Raw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username (also used to derive container for some endpoints)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "1-based page index"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000",
+                  "description": "Page size"
+                },
+                {
+                  "disabled": false,
+                  "key": "schema_name",
+                  "value": "<string>",
+                  "description": "Optional exact filter by schema_name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7cb81f36-2d53-4783-ba4f-8474e9b81b41",
+              "name": "Paged business stability & risk results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Business_Stability_And_Risk_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 6108,\n  \"total_pages\": 289,\n  \"current_page\": 8117,\n  \"page_size\": 7047,\n  \"data\": [\n    {\n      \"schema_name\": \"string\",\n      \"Revenue_Variability_Percentage\": 5828.960427202142,\n      \"Peak_Day_Stability_Ratio\": 3914.9380684276357,\n      \"Industry_Name\": \"string\",\n      \"Revenue_Industry_Comparison_Percentage\": 3073.731353179976,\n      \"Seasonal_Revenue_Risk_Percentage\": 2734.137405509863,\n      \"Branch_Count\": 6084.712511417776,\n      \"Business_Age_Years\": 8690.339495158469,\n      \"Forecasted_Growth_Percentage\": 846.355761105122\n    },\n    {\n      \"schema_name\": \"string\",\n      \"Revenue_Variability_Percentage\": 9368.196949651052,\n      \"Peak_Day_Stability_Ratio\": 1367.263653019285,\n      \"Industry_Name\": \"string\",\n      \"Revenue_Industry_Comparison_Percentage\": 2221.275673776749,\n      \"Seasonal_Revenue_Risk_Percentage\": 9500.99123279038,\n      \"Branch_Count\": 5087.308694030668,\n      \"Business_Age_Years\": 479.0762086557876,\n      \"Forecasted_Growth_Percentage\": 9945.939767761973\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "043623bc-b733-4c58-b32f-3e8b033c537f",
+              "name": "Bad request (missing/invalid parameters)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Business_Stability_And_Risk_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fef7f4f0-8e76-4c66-afd3-7996d443d540",
+              "name": "Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Business_Stability_And_Risk_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0a43665f-fc1a-416e-a6a5-22059ae4fc51",
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Business Stability And Risk Raw API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

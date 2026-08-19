@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Loan Amounts API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rewaa Loan Amounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Loan Amounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Rewaa_Loan_Amounts",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "Database username (also used to derive container for some endpoints)"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Database password"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page index"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Page size"
+              },
+              {
+                "name": "schema_name",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by schema_name"
+              }
+            ]
+          },
+          "docs": "Loan Amounts"
+        },
+        {
+          "info": {
+            "name": "Rebuild Loan Amounts and return a paged page",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.foodics.orbii.ai/Rewaa_Loan_Amounts",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "user",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                },
+                {
+                  "name": "page",
+                  "value": ""
+                },
+                {
+                  "name": "page_size",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Rebuild Loan Amounts and return a paged page"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

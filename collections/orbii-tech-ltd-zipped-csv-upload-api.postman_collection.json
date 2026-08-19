@@ -1,0 +1,230 @@
+{
+  "item": [
+    {
+      "id": "48d3e1d8-7d36-4613-b6fe-ffc95ad5354b",
+      "name": "Zipped Csv Upload",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f6c70c3d-52aa-4a5e-ad83-af3970369aa9",
+          "name": "Upload ZIP file(s) to secure storage",
+          "request": {
+            "name": "Upload ZIP file(s) to secure storage",
+            "description": {
+              "content": "Accepts one or more `.zip` files and uploads each ZIP.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "zipped-csv-upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "contentType": "application/zip",
+                  "description": "(Required) One or more `.zip` files to upload (each stored as-is)"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c4e99152-0960-41d9-a448-86ae181bf4ab",
+              "name": "ZIP file(s) uploaded successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "zipped-csv-upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) One or more `.zip` files to upload (each stored as-is)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text",
+                      "contentType": "application/zip"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"ZIP file(s) uploaded successfully.\",\n  \"container\": \"rewaa\",\n  \"uploaded_files\": [\n    \"merchant_payment_transactions.zip\",\n    \"merchant_sales_transactions.zip\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37cb4505-064a-42f2-81c8-c603aab586de",
+              "name": "Bad request (no files, invalid ZIP, wrong extension)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "zipped-csv-upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) One or more `.zip` files to upload (each stored as-is)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text",
+                      "contentType": "application/zip"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59d71d00-53b3-4424-bc75-b668e0697e9c",
+              "name": "Server error (container creation or upload failure)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "zipped-csv-upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) One or more `.zip` files to upload (each stored as-is)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text",
+                      "contentType": "application/zip"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c3e3a63f-7615-40bb-ada8-acf5780fbf34",
+    "name": "Orbii API - Foodics Business Category Assignment Zipped Csv Upload API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

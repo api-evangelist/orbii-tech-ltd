@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Baseline Eligibility Raw API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rewaa Baseline Eligibility Raw",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Baseline Eligibility (raw)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Rewaa_Baseline_Eligibility_Raw",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "Database username (also used to derive container for some endpoints)"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Database password"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page index"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Page size"
+              },
+              {
+                "name": "schema_name",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by schema_name"
+              }
+            ]
+          },
+          "docs": "Baseline Eligibility (raw)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

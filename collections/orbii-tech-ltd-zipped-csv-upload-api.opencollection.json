@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Zipped Csv Upload API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Zipped Csv Upload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload ZIP file(s) to secure storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.foodics.orbii.ai/zipped-csv-upload",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "files",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Accepts one or more `.zip` files and uploads each ZIP.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

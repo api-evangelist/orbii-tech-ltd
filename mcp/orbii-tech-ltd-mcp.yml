@@ -248,3 +248,9 @@ tools:
 - name: get_categories_clientname
   description: Get distinct categories for a client
   source_operation: openapi/orbii-tech-ltd-main-openapi.json#GET /categories/{clientname}
+deployment:
+  mode: none
+  verified: derived
+  tools: 191
+  checked: '2026-08-12'
+  source: catalog MCP census

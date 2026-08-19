@@ -1,0 +1,221 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Raw Numbers API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Raw Numbers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get paginated baseline eligibility raw numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Baseline_Eligibility_Raw",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (must be >= 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (must be >= 1)"
+              }
+            ]
+          },
+          "docs": "Get paginated baseline eligibility raw numbers"
+        },
+        {
+          "info": {
+            "name": "Get paginated business stability and risk raw numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Business_Stability_And_Risk_Raw",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (must be >= 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (must be >= 1)"
+              }
+            ]
+          },
+          "docs": "Get paginated business stability and risk raw numbers"
+        },
+        {
+          "info": {
+            "name": "Get paginated industry and seasonal trends raw numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Industry_And_Seasonal_Trends_Raw",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (must be >= 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (must be >= 1)"
+              }
+            ]
+          },
+          "docs": "Get paginated industry and seasonal trends raw numbers"
+        },
+        {
+          "info": {
+            "name": "Get paginated payment processing and liquidity raw numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Payment_Processing_And_Liquidity_Raw",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (must be >= 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (must be >= 1)"
+              }
+            ]
+          },
+          "docs": "Get paginated payment processing and liquidity raw numbers"
+        },
+        {
+          "info": {
+            "name": "Get paginated revenue and sales performance raw numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Revenue_And_Sales_Performance_Raw",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (must be >= 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (must be >= 1)"
+              }
+            ]
+          },
+          "docs": "Get paginated revenue and sales performance raw numbers"
+        },
+        {
+          "info": {
+            "name": "Get KPI raw and text data for a specific business reference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Micro_Loan_Raw_Numbers/Business_Reference",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "business_reference",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get KPI raw and text data for a specific business reference"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

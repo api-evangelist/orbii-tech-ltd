@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment UpdateKpiRules API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UpdateKpiRules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update a KPI rule threshold",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.foodics.orbii.ai/UpdateKpiRules",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "user",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "category",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "rule",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "new_threshold",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Uupdates a KPI rule's threshold.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

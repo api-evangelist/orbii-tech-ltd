@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "b782fcef-e5c5-4479-bf5e-6774ff11ba27",
+      "name": "Rewaa Baseline Eligibility Raw",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cf1b9e48-92da-4463-bbcf-43cd8e3db744",
+          "name": "Baseline Eligibility (raw)",
+          "request": {
+            "name": "Baseline Eligibility (raw)",
+            "description": {},
+            "url": {
+              "path": [
+                "Rewaa_Baseline_Eligibility_Raw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username (also used to derive container for some endpoints)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "1-based page index"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000",
+                  "description": "Page size"
+                },
+                {
+                  "disabled": false,
+                  "key": "schema_name",
+                  "value": "<string>",
+                  "description": "Optional exact filter by schema_name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25b985e7-1e92-41c4-8bde-b03dbb61a89c",
+              "name": "Paged baseline eligibility results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Baseline_Eligibility_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 3998,\n  \"total_pages\": 2387,\n  \"current_page\": 7755,\n  \"page_size\": 7199,\n  \"data\": [\n    {\n      \"schema_name\": \"string\",\n      \"Annual_Revenue_SAR_Last_12\": 384.6096034941893,\n      \"Business_Age_Months\": 436.72658454675604,\n      \"Largest_Daily_Revenue_Share_Percentage\": 527.5088860657917,\n      \"Worst_Monthly_Revenue_Drop_Percentage\": 1628.3864430694684,\n      \"Active_Months_Last_12\": 6333.076966193362,\n      \"Inactivity_Max_Days\": 8505.48216873545,\n      \"Inactivity_Period_Count\": 8949.451795737163\n    },\n    {\n      \"schema_name\": \"string\",\n      \"Annual_Revenue_SAR_Last_12\": 1151.6370756326621,\n      \"Business_Age_Months\": 1804.0369037298942,\n      \"Largest_Daily_Revenue_Share_Percentage\": 7290.975110849659,\n      \"Worst_Monthly_Revenue_Drop_Percentage\": 684.1405726288075,\n      \"Active_Months_Last_12\": 7551.028896605078,\n      \"Inactivity_Max_Days\": 7086.605943551053,\n      \"Inactivity_Period_Count\": 3965.753641380734\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "440ea2bc-68cc-4838-83b2-63a6cc045f4e",
+              "name": "Bad request (missing/invalid parameters)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Baseline_Eligibility_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b266b1a8-9bd2-454c-9fc9-f69457456e09",
+              "name": "Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Baseline_Eligibility_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "386b20ea-f55f-4f57-968d-0cee5c3a2ebf",
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Baseline Eligibility Raw API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

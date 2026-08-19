@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Final Band Classification API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rewaa Final Band Classification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Final Band Classification",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Rewaa_Final_Band_Classification",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "Database username (also used to derive container for some endpoints)"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Database password"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page index"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Page size"
+              },
+              {
+                "name": "schema_name",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by schema_name"
+              }
+            ]
+          },
+          "docs": "Final Band Classification"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

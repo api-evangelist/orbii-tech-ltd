@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Risk Assessment API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rewaa Risk Assessment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Risk Assessment data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Rewaa_Risk_Assessment",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "Database username (also used to derive container for some endpoints)"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Database password"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page index"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Page size"
+              },
+              {
+                "name": "schema_name",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by schema_name"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by Category"
+              },
+              {
+                "name": "kpi",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by KPI"
+              },
+              {
+                "name": "rule",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by Rule"
+              }
+            ]
+          },
+          "docs": "Risk Assessment data"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

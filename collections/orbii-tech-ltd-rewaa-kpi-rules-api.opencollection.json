@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa KPI Rules API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rewaa KPI Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "KPI Rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/Rewaa_KPI_Rules",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "Database username (also used to derive container for some endpoints)"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Database password"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page index"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Page size"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by Category"
+              },
+              {
+                "name": "kpi",
+                "value": "",
+                "type": "query",
+                "description": "Optional exact filter by KPI"
+              }
+            ]
+          },
+          "docs": "KPI Rules"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

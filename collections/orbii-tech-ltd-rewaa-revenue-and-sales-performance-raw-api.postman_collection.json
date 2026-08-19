@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "c885fab2-eaa3-4e3f-883f-254ab9cf9f11",
+      "name": "Rewaa Revenue And Sales Performance Raw",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c5547e5c-d380-42ca-9b03-73546967d155",
+          "name": "Revenue & Sales Performance (raw)",
+          "request": {
+            "name": "Revenue & Sales Performance (raw)",
+            "description": {},
+            "url": {
+              "path": [
+                "Rewaa_Revenue_And_Sales_Performance_Raw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username (also used to derive container for some endpoints)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "1-based page index"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000",
+                  "description": "Page size"
+                },
+                {
+                  "disabled": false,
+                  "key": "schema_name",
+                  "value": "<string>",
+                  "description": "Optional exact filter by schema_name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8307f4f-cbac-4de2-aaec-db85b8d493d3",
+              "name": "Paged revenue & sales performance results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Revenue_And_Sales_Performance_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 6260,\n  \"total_pages\": 1239,\n  \"current_page\": 2859,\n  \"page_size\": 4501,\n  \"data\": [\n    {\n      \"schema_name\": \"string\",\n      \"Total_Revenue_SAR\": 5267.809223474488,\n      \"Avg_Monthly_Quantity_Sold\": 7224.477702341664,\n      \"YoY_Growth_Percentage\": 6526.580338513033,\n      \"Revenue_Variability_Percentage\": 1443.6350748830585,\n      \"Positive_Growth_Percentage\": 5893.711854502678,\n      \"Avg_Sold_Per_Day\": 6304.895193876522,\n      \"Seasonal_Spike_Percentage\": 4850.721683145478,\n      \"Monthly_Positive_Trend_Percentage\": 9573.464237875949,\n      \"Card_Transaction_Ratio_Percentage\": 2866.550947555123,\n      \"Transfer_Transaction_Ratio_Percentage\": 3204.2506348203992,\n      \"Revenue_Regularity_Percentage\": 6321.133616014012,\n      \"Revenue_Stability_Percentage\": 2938.7435375173586,\n      \"Daily_Sales_Stability_Percentage\": 2318.6573915777976,\n      \"Unique_Payment_Methods_Count\": 1442.9799783922404,\n      \"Forecasted_Sales_Growth_Percentage\": 5088.065287994137,\n      \"Active_Months_Last_12\": 9142.545181065487\n    },\n    {\n      \"schema_name\": \"string\",\n      \"Total_Revenue_SAR\": 8049.258538459209,\n      \"Avg_Monthly_Quantity_Sold\": 2548.875725529275,\n      \"YoY_Growth_Percentage\": 3911.6310353543117,\n      \"Revenue_Variability_Percentage\": 9878.016252953554,\n      \"Positive_Growth_Percentage\": 6978.184596960555,\n      \"Avg_Sold_Per_Day\": 7041.877821478435,\n      \"Seasonal_Spike_Percentage\": 1734.1964521938603,\n      \"Monthly_Positive_Trend_Percentage\": 9865.70383795764,\n      \"Card_Transaction_Ratio_Percentage\": 3230.383287024382,\n      \"Transfer_Transaction_Ratio_Percentage\": 6286.029554308323,\n      \"Revenue_Regularity_Percentage\": 3255.58799279521,\n      \"Revenue_Stability_Percentage\": 9419.41214776041,\n      \"Daily_Sales_Stability_Percentage\": 3978.377652785594,\n      \"Unique_Payment_Methods_Count\": 7278.696398474693,\n      \"Forecasted_Sales_Growth_Percentage\": 272.7859854336745,\n      \"Active_Months_Last_12\": 1225.911886548261\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a7d2457-2d9d-4cbe-a9ff-0b6e5d356fe4",
+              "name": "Bad request (missing/invalid parameters)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Revenue_And_Sales_Performance_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca0b2874-bd98-421c-9ef0-f6c7814c512e",
+              "name": "Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Revenue_And_Sales_Performance_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0009a242-ebb1-4c9e-b0a6-2e0a6220a36b",
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Revenue And Sales Performance Raw API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

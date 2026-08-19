@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "337884b0-c798-4a45-b955-b84d284549a2",
+      "name": "Rewaa Payment Processing And Liquidity Raw",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b81ad40d-fb4f-4813-aede-86f63d1d2aed",
+          "name": "Payment Processing & Liquidity (raw)",
+          "request": {
+            "name": "Payment Processing & Liquidity (raw)",
+            "description": {},
+            "url": {
+              "path": [
+                "Rewaa_Payment_Processing_And_Liquidity_Raw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username (also used to derive container for some endpoints)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "1-based page index"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000",
+                  "description": "Page size"
+                },
+                {
+                  "disabled": false,
+                  "key": "schema_name",
+                  "value": "<string>",
+                  "description": "Optional exact filter by schema_name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "60d793ea-5a04-4ca0-bf9d-db7d26ce6622",
+              "name": "Paged payment processing & liquidity results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Payment_Processing_And_Liquidity_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 7730,\n  \"total_pages\": 6637,\n  \"current_page\": 3230,\n  \"page_size\": 1326,\n  \"data\": [\n    {\n      \"schema_name\": \"string\",\n      \"Total_Transactions\": 8802.746311184053,\n      \"Card_Transactions\": 2498.1998660050376,\n      \"Card_Transaction_Ratio_Percentage\": 6193.332885671696,\n      \"Transfer_Transactions\": 6314.125774596891,\n      \"Transfer_Transaction_Ratio_Percentage\": 652.7255059010462,\n      \"Cash_Transactions\": 6997.898484179345,\n      \"Cash_Transaction_Ratio_Percentage\": 6485.785200223416,\n      \"CustomerDebit_Transactions\": 1044.8282004776877,\n      \"CustomerDebit_Transaction_Ratio_Percentage\": 3650.3612732797187,\n      \"Total_Active_Days\": 9853.803399484697,\n      \"Transactions_Per_Day\": 8211.723773243575\n    },\n    {\n      \"schema_name\": \"string\",\n      \"Total_Transactions\": 5086.327600488801,\n      \"Card_Transactions\": 5477.7962741847705,\n      \"Card_Transaction_Ratio_Percentage\": 2027.0692055374438,\n      \"Transfer_Transactions\": 2703.274421652936,\n      \"Transfer_Transaction_Ratio_Percentage\": 4939.42440423978,\n      \"Cash_Transactions\": 9740.614389664515,\n      \"Cash_Transaction_Ratio_Percentage\": 9436.257993336803,\n      \"CustomerDebit_Transactions\": 1986.1667079136269,\n      \"CustomerDebit_Transaction_Ratio_Percentage\": 7441.810857104645,\n      \"Total_Active_Days\": 2426.9430918382163,\n      \"Transactions_Per_Day\": 3610.5015774877425\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4932ef8-f339-4522-99a6-583c7beb02a5",
+              "name": "Bad request (missing/invalid parameters)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Payment_Processing_And_Liquidity_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca38d9b3-552c-45a5-9e54-ba871400da54",
+              "name": "Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Payment_Processing_And_Liquidity_Raw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d146f79f-07c3-4e87-be30-8e2bea1a25e7",
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Payment Processing And Liquidity Raw API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

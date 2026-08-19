@@ -1,0 +1,358 @@
+{
+  "item": [
+    {
+      "id": "6562c81c-55b2-4ced-a470-c63c264482f6",
+      "name": "UpdateKpiRules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "949b7c35-cadd-4da4-88e3-891bc3fc3fcf",
+          "name": "Update a KPI rule threshold",
+          "request": {
+            "name": "Update a KPI rule threshold",
+            "description": {
+              "content": "Uupdates a KPI rule's threshold.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "UpdateKpiRules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "category",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) KPI category to update"
+                },
+                {
+                  "key": "rule",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Rule name within the category"
+                },
+                {
+                  "key": "new_threshold",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) New threshold value (sent as string; converted by stored procedure)"
+                },
+                {
+                  "key": "user",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Database username (optional; defaults to env `DB_USER`)"
+                },
+                {
+                  "key": "password",
+                  "value": "<password>",
+                  "type": "text",
+                  "description": "Database password (optional; defaults to env `DB_PASSWORD`)"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ad58b442-589c-46da-a8cf-ee4a819a80d4",
+              "name": "KPI rule updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "UpdateKpiRules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) KPI category to update",
+                        "type": "text/plain"
+                      },
+                      "key": "category",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Rule name within the category",
+                        "type": "text/plain"
+                      },
+                      "key": "rule",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) New threshold value (sent as string; converted by stored procedure)",
+                        "type": "text/plain"
+                      },
+                      "key": "new_threshold",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Database username (optional; defaults to env `DB_USER`)",
+                        "type": "text/plain"
+                      },
+                      "key": "user",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Database password (optional; defaults to env `DB_PASSWORD`)",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<password>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"KPI rule updated successfully\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "384d1405-80e7-4d3b-8674-ce07050d0b4a",
+              "name": "Missing credentials or required form fields",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "UpdateKpiRules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) KPI category to update",
+                        "type": "text/plain"
+                      },
+                      "key": "category",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Rule name within the category",
+                        "type": "text/plain"
+                      },
+                      "key": "rule",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) New threshold value (sent as string; converted by stored procedure)",
+                        "type": "text/plain"
+                      },
+                      "key": "new_threshold",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Database username (optional; defaults to env `DB_USER`)",
+                        "type": "text/plain"
+                      },
+                      "key": "user",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Database password (optional; defaults to env `DB_PASSWORD`)",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<password>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'category', 'rule', or 'new_threshold' in form data\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e31e51dd-359e-4753-b302-64173517b167",
+              "name": "Database or server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "UpdateKpiRules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) KPI category to update",
+                        "type": "text/plain"
+                      },
+                      "key": "category",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Rule name within the category",
+                        "type": "text/plain"
+                      },
+                      "key": "rule",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) New threshold value (sent as string; converted by stored procedure)",
+                        "type": "text/plain"
+                      },
+                      "key": "new_threshold",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Database username (optional; defaults to env `DB_USER`)",
+                        "type": "text/plain"
+                      },
+                      "key": "user",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Database password (optional; defaults to env `DB_PASSWORD`)",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<password>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"('42000', '[Microsoft][ODBC Driver 17 for SQL Server] ...')\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f2cc8391-8460-4e16-9547-2f3737bfeeb5",
+    "name": "Orbii API - Foodics Business Category Assignment UpdateKpiRules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

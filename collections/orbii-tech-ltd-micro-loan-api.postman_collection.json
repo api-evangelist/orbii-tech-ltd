@@ -1,0 +1,483 @@
+{
+  "item": [
+    {
+      "id": "58937e57-1da5-4e46-98ed-6901a0182c28",
+      "name": "Micro Loan",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a3d834fc-0cad-4175-a467-0be0057351e6",
+          "name": "Get paginated micro loan amounts",
+          "request": {
+            "name": "Get paginated micro loan amounts",
+            "description": {},
+            "url": {
+              "path": [
+                "Micro_Loan_Loan_Amounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ceb1c59-fbcd-4dd1-950e-3cd7ae14e93b",
+              "name": "Paginated results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Micro_Loan_Loan_Amounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 7135,\n  \"total_pages\": 3104,\n  \"current_page\": 2974,\n  \"page_size\": 2873,\n  \"data\": [\n    {\n      \"BUSINESS_REFERENCE\": 5638,\n      \"BAND\": \"string\",\n      \"rms_annual_revenue\": 6838.18367738711,\n      \"rms_max_loan_amount\": 1273.9155924865786,\n      \"rms_daily_payment_6m\": 248.13142492696505,\n      \"rms_daily_payment_12m\": 67.26154452677213,\n      \"rms_daily_payment_24m\": 6792.519866260044,\n      \"pay_annual_revenue\": 2027.0781423567107,\n      \"pay_max_loan_amount\": 8452.363035694985,\n      \"pay_daily_payment_6m\": 3439.3048757985634,\n      \"pay_daily_payment_12m\": 5307.6064643460995,\n      \"pay_daily_payment_24m\": 1488.8711748174821\n    },\n    {\n      \"BUSINESS_REFERENCE\": 611,\n      \"BAND\": \"string\",\n      \"rms_annual_revenue\": 4088.700589558715,\n      \"rms_max_loan_amount\": 2111.355537849685,\n      \"rms_daily_payment_6m\": 4744.603970246952,\n      \"rms_daily_payment_12m\": 7047.245059601981,\n      \"rms_daily_payment_24m\": 6323.324012612082,\n      \"pay_annual_revenue\": 7973.94509131004,\n      \"pay_max_loan_amount\": 1557.9894523248272,\n      \"pay_daily_payment_6m\": 9015.796293508556,\n      \"pay_daily_payment_12m\": 6328.789516631881,\n      \"pay_daily_payment_24m\": 4142.417505215941\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eb9efa26-ce5f-4f06-8862-0d191a717986",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Micro_Loan_Loan_Amounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c9dedab9-3669-4b71-943d-6cf0541b0ad5",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Micro_Loan_Loan_Amounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ef6b836-6760-42f3-8bf5-28175aefa3ba",
+          "name": "Recalculate loan amounts and return a paginated page",
+          "request": {
+            "name": "Recalculate loan amounts and return a paginated page",
+            "description": {},
+            "url": {
+              "path": [
+                "Micro_Loan_Loan_Amounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e8e1c0a4-ddab-4266-a0a2-b6a690c7820a",
+              "name": "Recalculated and paginated results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Micro_Loan_Loan_Amounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Database username",
+                        "type": "text/plain"
+                      },
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Database password",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "page_size",
+                      "value": "1000"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 7135,\n  \"total_pages\": 3104,\n  \"current_page\": 2974,\n  \"page_size\": 2873,\n  \"data\": [\n    {\n      \"BUSINESS_REFERENCE\": 5638,\n      \"BAND\": \"string\",\n      \"rms_annual_revenue\": 6838.18367738711,\n      \"rms_max_loan_amount\": 1273.9155924865786,\n      \"rms_daily_payment_6m\": 248.13142492696505,\n      \"rms_daily_payment_12m\": 67.26154452677213,\n      \"rms_daily_payment_24m\": 6792.519866260044,\n      \"pay_annual_revenue\": 2027.0781423567107,\n      \"pay_max_loan_amount\": 8452.363035694985,\n      \"pay_daily_payment_6m\": 3439.3048757985634,\n      \"pay_daily_payment_12m\": 5307.6064643460995,\n      \"pay_daily_payment_24m\": 1488.8711748174821\n    },\n    {\n      \"BUSINESS_REFERENCE\": 611,\n      \"BAND\": \"string\",\n      \"rms_annual_revenue\": 4088.700589558715,\n      \"rms_max_loan_amount\": 2111.355537849685,\n      \"rms_daily_payment_6m\": 4744.603970246952,\n      \"rms_daily_payment_12m\": 7047.245059601981,\n      \"rms_daily_payment_24m\": 6323.324012612082,\n      \"pay_annual_revenue\": 7973.94509131004,\n      \"pay_max_loan_amount\": 1557.9894523248272,\n      \"pay_daily_payment_6m\": 9015.796293508556,\n      \"pay_daily_payment_12m\": 6328.789516631881,\n      \"pay_daily_payment_24m\": 4142.417505215941\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19a0206b-dfe8-4d2e-9aec-fd7632246c39",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Micro_Loan_Loan_Amounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Database username",
+                        "type": "text/plain"
+                      },
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Database password",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "page_size",
+                      "value": "1000"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d57bf37a-cfd3-4d1f-a536-41c5564382d4",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Micro_Loan_Loan_Amounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Database username",
+                        "type": "text/plain"
+                      },
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Database password",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "page_size",
+                      "value": "1000"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e032dfc9-d1c4-4f43-929e-bc6b060a1d22",
+    "name": "Orbii API - Foodics Business Category Assignment Micro Loan API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "43c6a979-4f8a-4056-aced-dd77382ad16b",
+      "name": "Rewaa Final Band Classification",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "104f5dfc-785e-4c97-b5d8-e8b2a2e638c9",
+          "name": "Final Band Classification",
+          "request": {
+            "name": "Final Band Classification",
+            "description": {},
+            "url": {
+              "path": [
+                "Rewaa_Final_Band_Classification"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "(Required) Database username (also used to derive container for some endpoints)"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) Database password"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "1-based page index"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "1000",
+                  "description": "Page size"
+                },
+                {
+                  "disabled": false,
+                  "key": "schema_name",
+                  "value": "<string>",
+                  "description": "Optional exact filter by schema_name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "362ae173-6d89-4961-95a1-82d1ce99f3e4",
+              "name": "Paged final band classification",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Final_Band_Classification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_records\": 2731,\n  \"total_pages\": 8248,\n  \"current_page\": 8123,\n  \"page_size\": 2161,\n  \"data\": [\n    {\n      \"schema_name\": \"string\",\n      \"Baseline_Eligibility_Score\": 3740.1587731197005,\n      \"Business_Stability_and_Risk_Score\": 2729.898595980339,\n      \"Industry_and_Seasonal_Trends_Score\": 4391.462124205235,\n      \"Payment_Processing_and_Liquidity_Score\": 29.269015057632465,\n      \"Revenue_and_Sales_Performance_Score\": 4731.171068278853,\n      \"Baseline_Eligibility_Score_Value\": 3660.4576156883572,\n      \"Business_Stability_and_Risk_Score_Value\": 4755.180059359917,\n      \"Industry_and_Seasonal_Trends_Score_Value\": 4376.612577631086,\n      \"Payment_Processing_and_Liquidity_Score_Value\": 4226.766526396165,\n      \"Revenue_and_Sales_Performance_Score_Value\": 2954.6868700607565,\n      \"Total_Score\": 6927.781389129506,\n      \"Band\": \"string\"\n    },\n    {\n      \"schema_name\": \"string\",\n      \"Baseline_Eligibility_Score\": 4399.438071298343,\n      \"Business_Stability_and_Risk_Score\": 5278.434916958286,\n      \"Industry_and_Seasonal_Trends_Score\": 4874.832062326704,\n      \"Payment_Processing_and_Liquidity_Score\": 2788.2403997307124,\n      \"Revenue_and_Sales_Performance_Score\": 4016.3895797268424,\n      \"Baseline_Eligibility_Score_Value\": 9053.019510014507,\n      \"Business_Stability_and_Risk_Score_Value\": 8852.572291723556,\n      \"Industry_and_Seasonal_Trends_Score_Value\": 4491.73183222204,\n      \"Payment_Processing_and_Liquidity_Score_Value\": 2599.538757487233,\n      \"Revenue_and_Sales_Performance_Score_Value\": 3088.0330191030157,\n      \"Total_Score\": 7704.806875258182,\n      \"Band\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78c9316d-47ad-4bab-9fb6-d63eb3e433ee",
+              "name": "Bad request (missing/invalid parameters)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Final_Band_Classification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50e340b7-751b-43fe-8c89-a6a354e3e745",
+              "name": "Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Rewaa_Final_Band_Classification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "schema_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing 'user' or 'password' query parameters\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.foodics.orbii.ai/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "08cfae11-b24a-4084-82bd-00c1e2b2cc65",
+    "name": "Orbii API - Foodics Business Category Assignment Rewaa Final Band Classification API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.",
+      "type": "text/plain"
+    }
+  }
+}

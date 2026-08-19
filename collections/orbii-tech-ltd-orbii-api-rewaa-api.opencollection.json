@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orbii API - Foodics Business Category Assignment Orbii API Rewaa API",
+    "version": "1.0.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orbii API Rewaa",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Health/Welcome",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.foodics.orbii.ai/"
+          },
+          "docs": "Health/Welcome"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
