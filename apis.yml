@@ -104,7 +104,8 @@ apis:
   description: The General API from Orbii Tech Ltd — 1 operation(s) for general.
   humanURL: https://api.docs.orbii.ai/
   baseURL: https://api.orbii.ai
-  tags:
+  tags: []
+  tags_raw:
   - General
   properties:
   - type: OpenAPI
@@ -350,6 +351,8 @@ apis:
   humanURL: https://api.docs.orbii.ai/
   baseURL: https://api.orbii.ai
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
