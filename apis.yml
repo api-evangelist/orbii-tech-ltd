@@ -9,6 +9,18 @@ description: >-
   lending, and BNPL, with regional deployments for Saudi Arabia (KSA) and Oman (OMN). Orbii raised
   a $3.6M seed round backed by Prosus, VentureSouq, Dash Ventures, and Sanabil 500.
 url: https://raw.githubusercontent.com/api-evangelist/orbii-tech-ltd/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
