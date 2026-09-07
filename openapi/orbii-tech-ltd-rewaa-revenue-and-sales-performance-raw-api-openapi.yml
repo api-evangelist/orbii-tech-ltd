@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Orbii API - Foodics Business Category Assignment Rewaa Revenue And Sales Performance Raw API
   version: 1.0.2
@@ -37,38 +37,40 @@ paths:
       tags:
       - Rewaa Revenue And Sales Performance Raw
 components:
+  parameters:
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
+    UserQ:
+      in: query
+      name: user
+      required: true
+      schema:
+        type: string
+      description: Database username (also used to derive container for some endpoints)
+    PasswordQ:
+      in: query
+      name: password
+      required: true
+      schema:
+        type: string
+      description: Database password
+    PageQ:
+      in: query
+      name: page
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      description: 1-based page index
   schemas:
-    PagedRevenueSales:
-      allOf:
-      - $ref: '#/components/schemas/PageEnvelope'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/RevenueSalesRow'
-    PageEnvelope:
-      type: object
-      properties:
-        total_records:
-          type: integer
-        total_pages:
-          type: integer
-        current_page:
-          type: integer
-        page_size:
-          type: integer
-        data:
-          type: array
-          items:
-            type: object
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-      example:
-        error: Missing 'user' or 'password' query parameters
     RevenueSalesRow:
       type: object
       properties:
@@ -122,39 +124,37 @@ components:
         Active_Months_Last_12:
           type: number
           format: double
-  parameters:
-    UserQ:
-      in: query
-      name: user
-      required: true
-      schema:
-        type: string
-      description: Database username (also used to derive container for some endpoints)
-    PasswordQ:
-      in: query
-      name: password
-      required: true
-      schema:
-        type: string
-      description: Database password
-    PageSizeQ:
-      in: query
-      name: page_size
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1000
-      description: Page size
-    PageQ:
-      in: query
-      name: page
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1
-      description: 1-based page index
+    PageEnvelope:
+      type: object
+      properties:
+        total_records:
+          type: integer
+        total_pages:
+          type: integer
+        current_page:
+          type: integer
+        page_size:
+          type: integer
+        data:
+          type: array
+          items:
+            type: object
+    PagedRevenueSales:
+      allOf:
+      - $ref: '#/components/schemas/PageEnvelope'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/RevenueSalesRow'
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      example:
+        error: Missing 'user' or 'password' query parameters
   responses:
     BadRequest:
       description: Bad request (missing/invalid parameters)

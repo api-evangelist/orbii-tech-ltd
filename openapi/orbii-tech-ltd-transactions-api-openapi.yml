@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Orbii API - Foodics Business Category Assignment Transactions API
   version: 1.0.2
@@ -1127,21 +1127,6 @@ paths:
           description: Server error
 components:
   schemas:
-    PagedTransactionsCostType:
-      type: object
-      properties:
-        total_records:
-          type: integer
-        page:
-          type: integer
-        page_size:
-          type: integer
-        total_pages:
-          type: integer
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionCostType'
     TransactionCostType:
       type: object
       properties:
@@ -1184,3 +1169,18 @@ components:
         customer_id:
           type: string
           format: uuid
+    PagedTransactionsCostType:
+      type: object
+      properties:
+        total_records:
+          type: integer
+        page:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionCostType'

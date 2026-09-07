@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Orbii API - Foodics Business Category Assignment Rewaa Loan Amounts API
   version: 1.0.2
@@ -76,6 +76,28 @@ paths:
       - Rewaa Loan Amounts
 components:
   schemas:
+    LoanAmountsRow:
+      type: object
+      properties:
+        schema_name:
+          type: string
+        Band:
+          type: string
+        Annual_Revenue_SAR_Last_12:
+          type: number
+          format: double
+        Max_Loan_Amount_SAR:
+          type: number
+          format: double
+        Daily_Payment_6m_SAR:
+          type: number
+          format: double
+        Daily_Payment_12m_SAR:
+          type: number
+          format: double
+        Daily_Payment_24m_SAR:
+          type: number
+          format: double
     PagedLoanAmounts:
       allOf:
       - $ref: '#/components/schemas/PageEnvelope'
@@ -100,28 +122,6 @@ components:
           type: array
           items:
             type: object
-    LoanAmountsRow:
-      type: object
-      properties:
-        schema_name:
-          type: string
-        Band:
-          type: string
-        Annual_Revenue_SAR_Last_12:
-          type: number
-          format: double
-        Max_Loan_Amount_SAR:
-          type: number
-          format: double
-        Daily_Payment_6m_SAR:
-          type: number
-          format: double
-        Daily_Payment_12m_SAR:
-          type: number
-          format: double
-        Daily_Payment_24m_SAR:
-          type: number
-          format: double
     Error:
       type: object
       properties:
@@ -130,6 +130,15 @@ components:
       example:
         error: Missing 'user' or 'password' query parameters
   parameters:
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
     UserQ:
       in: query
       name: user
@@ -144,15 +153,6 @@ components:
       schema:
         type: string
       description: Database password
-    PageSizeQ:
-      in: query
-      name: page_size
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1000
-      description: Page size
     PageQ:
       in: query
       name: page

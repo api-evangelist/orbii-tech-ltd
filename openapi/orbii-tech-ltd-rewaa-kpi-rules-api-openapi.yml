@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Orbii API - Foodics Business Category Assignment Rewaa KPI Rules API
   version: 1.0.2
@@ -43,6 +43,15 @@ paths:
       - Rewaa KPI Rules
 components:
   parameters:
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
     UserQ:
       in: query
       name: user
@@ -57,15 +66,6 @@ components:
       schema:
         type: string
       description: Database password
-    PageSizeQ:
-      in: query
-      name: page_size
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1000
-      description: Page size
     PageQ:
       in: query
       name: page

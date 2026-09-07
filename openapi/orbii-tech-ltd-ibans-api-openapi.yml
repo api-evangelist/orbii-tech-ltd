@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment IBANs API
+  title: Orbii API - Foodics Business Category Assignment IBA Ns API
   version: 1.0.2
   description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
 servers:

@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Orbii API - Foodics Business Category Assignment Invoices API
   version: 1.0.2
@@ -745,70 +745,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    InvoiceCompanyBandClassification:
-      type: object
-      properties:
-        company:
-          type: string
-          example: Acme Trading LLC
-        activity_and_relationship_score:
-          type: integer
-          example: 4
-        spend_and_concentration_score:
-          type: integer
-          example: 3
-        payment_behaviour_score:
-          type: integer
-          example: 5
-        activity_and_relationship_score_value:
-          type: number
-          format: float
-          nullable: true
-          example: 0.78
-        spend_and_concentration_score_value:
-          type: number
-          format: float
-          nullable: true
-          example: 0.65
-        payment_behaviour_score_value:
-          type: number
-          format: float
-          nullable: true
-          example: 0.92
-        total_score:
-          type: number
-          format: float
-          nullable: true
-          example: 3.98
-        band:
-          type: string
-          example: A
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-    InvoiceKpi:
-      type: object
-      properties:
-        category:
-          type: string
-          example: Revenue
-        kpi:
-          type: string
-          example: Monthly revenue
-        value:
-          type: number
-          format: float
-          nullable: true
-          example: 123456.78
-        year:
-          type: integer
-          example: 2025
-        month:
-          type: integer
-          minimum: 1
-          maximum: 12
-          example: 9
     InvoiceCompanyKpi:
       type: object
       properties:
@@ -822,10 +758,62 @@ components:
           type: string
           example: Monthly revenue
         value:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 128450.55
+    InvoiceSuggestedLoan:
+      type: object
+      properties:
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+        band:
+          type: string
+          example: A
+        annual_revenue:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 1250000.0
+        multiplier:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.35
+        suggested_loan:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 437500.0
+    InvoiceKpi:
+      type: object
+      properties:
+        category:
+          type: string
+          example: Revenue
+        kpi:
+          type: string
+          example: Monthly revenue
+        value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 123456.78
+        year:
+          type: integer
+          example: 2025
+        month:
+          type: integer
+          minimum: 1
+          maximum: 12
+          example: 9
     InvoiceSuggestedLoanAllocation:
       type: object
       properties:
@@ -840,110 +828,77 @@ components:
           type: string
           example: A
         total_score:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 3.98
         due_amount:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 150000.0
         multiplier:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 0.35
         company_cap:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 120000.0
         allocated_amount:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 120000.0
         rank_by_score:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           example: 1
-    InvoiceSuggestedLoan:
-      type: object
-      properties:
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-        band:
-          type: string
-          example: A
-        annual_revenue:
-          type: number
-          format: float
-          nullable: true
-          example: 1250000.0
-        multiplier:
-          type: number
-          format: float
-          nullable: true
-          example: 0.35
-        suggested_loan:
-          type: number
-          format: float
-          nullable: true
-          example: 437500.0
     InvoiceSuggestedLoanSummary:
       type: object
       properties:
         suggested_loan:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 437500.0
         total_company_caps:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 190000.0
         total_allocated:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 185000.0
         unallocated_remainder:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 252500.0
         customer_id:
           type: string
           format: uuid
           example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-    InvoiceCompanyRiskAssessment:
+    Error:
       type: object
       properties:
-        company:
+        error:
           type: string
-          example: Acme Trading LLC
-        category:
-          type: string
-          example: Revenue & Income
-        rule:
-          type: string
-          example: Revenue consistency above threshold
-        value:
-          type: number
-          format: float
-          nullable: true
-          example: 0.87
-        assessment:
-          type: string
-          example: Pass
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+          example: Invalid datetime format. Expected 'YYYY-MM-DD HH:MM:SS.sss'
     InvoiceBandClassification:
       type: object
       properties:
@@ -963,38 +918,115 @@ components:
           type: integer
           example: 5
         baseline_eligibility_score_value:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 0.72
         business_stability_and_risk_score_value:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 0.61
         invoicing_and_seasonal_trends_score_value:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 0.88
         payment_processing_and_liquidity_score_value:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 0.76
         revenue_performance_score_value:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 0.9
         total_score:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 3.77
         band:
           type: string
           example: A
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+    InvoiceCompanyBandClassification:
+      type: object
+      properties:
+        company:
+          type: string
+          example: Acme Trading LLC
+        activity_and_relationship_score:
+          type: integer
+          example: 4
+        spend_and_concentration_score:
+          type: integer
+          example: 3
+        payment_behaviour_score:
+          type: integer
+          example: 5
+        activity_and_relationship_score_value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.78
+        spend_and_concentration_score_value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.65
+        payment_behaviour_score_value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.92
+        total_score:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 3.98
+        band:
+          type: string
+          example: A
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+    InvoiceCompanyRiskAssessment:
+      type: object
+      properties:
+        company:
+          type: string
+          example: Acme Trading LLC
+        category:
+          type: string
+          example: Revenue & Income
+        rule:
+          type: string
+          example: Revenue consistency above threshold
+        value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.87
+        assessment:
+          type: string
+          example: Pass
         customer_id:
           type: string
           format: uuid
@@ -1009,9 +1041,10 @@ components:
           type: string
           example: Revenue consistency above threshold
         value:
-          type: number
+          type:
+          - number
+          - 'null'
           format: float
-          nullable: true
           example: 0.87
         assessment:
           type: string
@@ -1020,9 +1053,3 @@ components:
           type: string
           format: uuid
           example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          example: Invalid datetime format. Expected 'YYYY-MM-DD HH:MM:SS.sss'
