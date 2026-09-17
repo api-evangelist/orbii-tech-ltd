@@ -122,16 +122,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/orbii-tech-ltd-general-api-openapi.yml
-- aid: orbii-tech-ltd:orbii-tech-ltd-ibans-api
-  name: Orbii Tech Ltd IBANs API
-  description: The IBANs API from Orbii Tech Ltd — 1 operation(s) for ibans.
-  humanURL: https://api.docs.orbii.ai/
-  baseURL: https://api.orbii.ai
-  tags:
-  - IBANs
-  properties:
-  - type: OpenAPI
-    url: openapi/orbii-tech-ltd-ibans-api-openapi.yml
 - aid: orbii-tech-ltd:orbii-tech-ltd-invoices-api
   name: Orbii Tech Ltd Invoices API
   description: The Invoices API from Orbii Tech Ltd — 11 operation(s) for invoices.
@@ -192,16 +182,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/orbii-tech-ltd-orbii-api-rewaa-api-openapi.yml
-- aid: orbii-tech-ltd:orbii-tech-ltd-pdfs-api
-  name: Orbii Tech Ltd PDFs API
-  description: The PDFs API from Orbii Tech Ltd — 4 operation(s) for pdfs.
-  humanURL: https://api.docs.orbii.ai/
-  baseURL: https://api.orbii.ai
-  tags:
-  - PDFs
-  properties:
-  - type: OpenAPI
-    url: openapi/orbii-tech-ltd-pdfs-api-openapi.yml
 - aid: orbii-tech-ltd:orbii-tech-ltd-raw-numbers-api
   name: Orbii Tech Ltd Raw Numbers API
   description: The Raw Numbers API from Orbii Tech Ltd — 6 operation(s) for raw numbers.
@@ -389,6 +369,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/orbii-tech-ltd-zipped-csv-upload-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-ibans-api
+  name: Orbii Tech Ltd IBA Ns API
+  description: The IBANs API from Orbii Tech Ltd — 1 operation(s) for ibans.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - IBANs
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-ibans-api-openapi.yml
+- aid: orbii-tech-ltd:orbii-tech-ltd-pdfs-api
+  name: Orbii Tech Ltd PD Fs API
+  description: The PDFs API from Orbii Tech Ltd — 4 operation(s) for pdfs.
+  humanURL: https://api.docs.orbii.ai/
+  baseURL: https://api.orbii.ai
+  tags:
+  - PDFs
+  properties:
+  - type: OpenAPI
+    url: openapi/orbii-tech-ltd-pdfs-api-openapi.yml
 common:
 - type: Overlay
   url: overlays/orbii-tech-ltd-foodics-overlay.yaml
