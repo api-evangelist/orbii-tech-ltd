@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Micro Loan API
+  title: Orbii API - Foodics Micro Loan API
   version: 1.0.2
   description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
 servers:
@@ -100,6 +100,8 @@ paths:
           description: Bad request
         '500':
           description: Server error
+      operationId: getMicroLoanLoanAmounts
+      x-operation-id-source: derived
     post:
       summary: Recalculate loan amounts and return a paginated page
       tags:
@@ -187,3 +189,5 @@ paths:
           description: Bad request
         '500':
           description: Server error
+      operationId: postMicroLoanLoanAmounts
+      x-operation-id-source: derived

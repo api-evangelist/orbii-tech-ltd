@@ -1,11 +1,11 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Lending Actions API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii Lending Actions API
+  description: API for managing transactions, clients, and companies.
+  version: 1.0.5-oas3
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.orbii.ai
+  description: Production server
 tags:
 - name: Lending Actions
 paths:
@@ -49,3 +49,5 @@ paths:
           description: Missing parameters.
         '500':
           description: Server error.
+      operationId: postLogLending
+      x-operation-id-source: derived

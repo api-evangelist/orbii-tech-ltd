@@ -1,11 +1,11 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii Business Category Assignment API
+  description: API for managing transactions, clients, and companies.
+  version: 1.0.5-oas3
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.orbii.ai
+  description: Production server
 tags:
 - name: Business Category Assignment
 paths:
@@ -52,11 +52,11 @@ paths:
           description: Missing required parameters
         '500':
           description: Server error or database access error
+      operationId: getAssignCategory
+      x-operation-id-source: derived
     post:
       summary: Submit customer business category
-      description: 'Stores or updates the selected business category and subcategory for the specified customer ID in the [Reporting].[CustomerBusinessCategory] table. Requires SQL credentials as form fields.
-
-        '
+      description: Stores or updates the selected business category and subcategory for the specified customer ID in the [Reporting].[CustomerBusinessCategory] table. Requires SQL credentials as form fields.
       tags:
       - Business Category Assignment
       requestBody:
@@ -73,10 +73,10 @@ paths:
               properties:
                 user:
                   type: string
-                  description: Database username
+                  description: usernamename
                 password:
                   type: string
-                  description: Database password
+                  description: password
                 customer_id:
                   type: string
                   description: Unique identifier for the customer
@@ -101,3 +101,5 @@ paths:
           description: Missing required form fields
         '500':
           description: Database connection or execution error
+      operationId: postAssignCategory
+      x-operation-id-source: derived

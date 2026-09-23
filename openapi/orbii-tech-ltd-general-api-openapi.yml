@@ -1,11 +1,13 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment General API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii Tech Ltd General API
+  version: '1.0'
+  description: 'Operations tagged General across 2 of this provider''s published API definitions: orbii-tech-ltd-foodics-openapi.json, orbii-tech-ltd-main-openapi.json. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.foodics.orbii.ai/
   description: Production Server
+- url: https://api.orbii.ai
+  description: Production server
 tags:
 - name: General
 paths:
@@ -18,3 +20,11 @@ paths:
       responses:
         '200':
           description: Welcome string
+      operationId: getRoot
+      x-operation-id-source: derived
+    servers:
+    - url: https://api.foodics.orbii.ai/
+      description: Production Server
+x-refined-from:
+- orbii-tech-ltd-foodics-openapi.json
+- orbii-tech-ltd-main-openapi.json

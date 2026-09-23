@@ -1,11 +1,10 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Rewaa Industry And Seasonal Trends Raw API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii API - Rewaa Rewaa Industry And Seasonal Trends Raw API
+  version: 1.0.4
+  description: API for Rewaa.
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.rewaa.orbii.ai/
 tags:
 - name: Rewaa Industry And Seasonal Trends Raw
 paths:
@@ -37,6 +36,39 @@ paths:
       tags:
       - Rewaa Industry And Seasonal Trends Raw
 components:
+  parameters:
+    PasswordQ:
+      in: query
+      name: password
+      required: true
+      schema:
+        type: string
+      description: Database password
+    PageQ:
+      in: query
+      name: page
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      description: 1-based page index
+    UserQ:
+      in: query
+      name: user
+      required: true
+      schema:
+        type: string
+      description: Database username (also used to derive container for some endpoints)
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
   schemas:
     IndustrySeasonalRow:
       type: object
@@ -81,15 +113,13 @@ components:
         Data_Quality_12M:
           type: number
           format: double
-    PagedIndustrySeasonal:
-      allOf:
-      - $ref: '#/components/schemas/PageEnvelope'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/IndustrySeasonalRow'
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      example:
+        error: Missing 'user' or 'password' query parameters
     PageEnvelope:
       type: object
       properties:
@@ -105,46 +135,15 @@ components:
           type: array
           items:
             type: object
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-      example:
-        error: Missing 'user' or 'password' query parameters
-  parameters:
-    PageSizeQ:
-      in: query
-      name: page_size
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1000
-      description: Page size
-    UserQ:
-      in: query
-      name: user
-      required: true
-      schema:
-        type: string
-      description: Database username (also used to derive container for some endpoints)
-    PasswordQ:
-      in: query
-      name: password
-      required: true
-      schema:
-        type: string
-      description: Database password
-    PageQ:
-      in: query
-      name: page
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1
-      description: 1-based page index
+    PagedIndustrySeasonal:
+      allOf:
+      - $ref: '#/components/schemas/PageEnvelope'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/IndustrySeasonalRow'
   responses:
     BadRequest:
       description: Bad request (missing/invalid parameters)

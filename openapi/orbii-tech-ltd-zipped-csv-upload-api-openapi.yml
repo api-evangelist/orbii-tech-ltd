@@ -1,20 +1,17 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Zipped Csv Upload API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii API - Rewaa Zipped Csv Upload API
+  version: 1.0.4
+  description: API for Rewaa.
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.rewaa.orbii.ai/
 tags:
 - name: Zipped Csv Upload
 paths:
   /zipped-csv-upload:
     post:
       summary: Upload ZIP file(s) to secure storage
-      description: 'Accepts one or more `.zip` files and uploads each ZIP.
-
-        '
+      description: Accepts one or more `.zip` files and uploads each ZIP.
       operationId: zippedCsvUpload
       requestBody:
         required: true

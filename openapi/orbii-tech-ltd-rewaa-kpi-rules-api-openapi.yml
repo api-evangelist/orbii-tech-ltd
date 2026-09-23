@@ -1,11 +1,10 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Rewaa KPI Rules API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii API - Rewaa Rewaa KPI Rules API
+  version: 1.0.4
+  description: API for Rewaa.
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.rewaa.orbii.ai/
 tags:
 - name: Rewaa KPI Rules
 paths:
@@ -43,22 +42,6 @@ paths:
       - Rewaa KPI Rules
 components:
   parameters:
-    PageSizeQ:
-      in: query
-      name: page_size
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1000
-      description: Page size
-    UserQ:
-      in: query
-      name: user
-      required: true
-      schema:
-        type: string
-      description: Database username (also used to derive container for some endpoints)
     PasswordQ:
       in: query
       name: password
@@ -75,7 +58,32 @@ components:
         minimum: 1
         default: 1
       description: 1-based page index
+    UserQ:
+      in: query
+      name: user
+      required: true
+      schema:
+        type: string
+      description: Database username (also used to derive container for some endpoints)
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
   schemas:
+    PagedKpiRules:
+      allOf:
+      - $ref: '#/components/schemas/PageEnvelope'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/KpiRuleRow'
     KpiRuleRow:
       type: object
       properties:
@@ -99,6 +107,13 @@ components:
           type: string
         RiskHighMessage:
           type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      example:
+        error: Missing 'user' or 'password' query parameters
     PageEnvelope:
       type: object
       properties:
@@ -114,22 +129,6 @@ components:
           type: array
           items:
             type: object
-    PagedKpiRules:
-      allOf:
-      - $ref: '#/components/schemas/PageEnvelope'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/KpiRuleRow'
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-      example:
-        error: Missing 'user' or 'password' query parameters
   responses:
     BadRequest:
       description: Bad request (missing/invalid parameters)

@@ -1,11 +1,10 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Rewaa Baseline Eligibility Raw API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii API - Rewaa Rewaa Baseline Eligibility Raw API
+  version: 1.0.4
+  description: API for Rewaa.
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.rewaa.orbii.ai/
 tags:
 - name: Rewaa Baseline Eligibility Raw
 paths:
@@ -37,62 +36,7 @@ paths:
       tags:
       - Rewaa Baseline Eligibility Raw
 components:
-  parameters:
-    PageSizeQ:
-      in: query
-      name: page_size
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1000
-      description: Page size
-    UserQ:
-      in: query
-      name: user
-      required: true
-      schema:
-        type: string
-      description: Database username (also used to derive container for some endpoints)
-    PasswordQ:
-      in: query
-      name: password
-      required: true
-      schema:
-        type: string
-      description: Database password
-    PageQ:
-      in: query
-      name: page
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1
-      description: 1-based page index
   schemas:
-    PageEnvelope:
-      type: object
-      properties:
-        total_records:
-          type: integer
-        total_pages:
-          type: integer
-        current_page:
-          type: integer
-        page_size:
-          type: integer
-        data:
-          type: array
-          items:
-            type: object
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-      example:
-        error: Missing 'user' or 'password' query parameters
     BaselineEligibilityRow:
       type: object
       properties:
@@ -119,6 +63,28 @@ components:
         Inactivity_Period_Count:
           type: number
           format: double
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      example:
+        error: Missing 'user' or 'password' query parameters
+    PageEnvelope:
+      type: object
+      properties:
+        total_records:
+          type: integer
+        total_pages:
+          type: integer
+        current_page:
+          type: integer
+        page_size:
+          type: integer
+        data:
+          type: array
+          items:
+            type: object
     PagedBaselineEligibility:
       allOf:
       - $ref: '#/components/schemas/PageEnvelope'
@@ -128,15 +94,48 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/BaselineEligibilityRow'
+  parameters:
+    PasswordQ:
+      in: query
+      name: password
+      required: true
+      schema:
+        type: string
+      description: Database password
+    PageQ:
+      in: query
+      name: page
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      description: 1-based page index
+    UserQ:
+      in: query
+      name: user
+      required: true
+      schema:
+        type: string
+      description: Database username (also used to derive container for some endpoints)
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
   responses:
-    InternalError:
-      description: Unexpected server error
+    BadRequest:
+      description: Bad request (missing/invalid parameters)
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request (missing/invalid parameters)
+    InternalError:
+      description: Unexpected server error
       content:
         application/json:
           schema:

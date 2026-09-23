@@ -1,20 +1,18 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Invoices API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii Invoices API
+  description: API for managing transactions, clients, and companies.
+  version: 1.0.5-oas3
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.orbii.ai
+  description: Production server
 tags:
 - name: Invoices
 paths:
   /invoice-extract-upload:
     post:
       summary: Upload Excel invoice extract
-      description: 'Upload Excel files (.xlsx, .xls, .xlsm).
-
-        '
+      description: Upload Excel files (.xlsx, .xls, .xlsm).
       tags:
       - Invoices
       requestBody:
@@ -102,12 +100,12 @@ paths:
                   response:
                     type: string
                     example: <Azure error details>
+      operationId: postInvoiceExtractUpload
+      x-operation-id-source: derived
   /start-invoice-extraction:
     post:
       summary: Start invoice extraction pipeline
-      description: 'Starts the Invoice Extraction pipeline for the given customer.   Prevents duplicate runs by checking if a pipeline is already running for the same `customer_id`.
-
-        '
+      description: Starts the Invoice Extraction pipeline for the given customer. Prevents duplicate runs by checking if a pipeline is already running for the same `customer_id`.
       tags:
       - Invoices
       requestBody:
@@ -180,12 +178,13 @@ paths:
                   response_text:
                     type: string
                     example: '{"error": "ADF pipeline not found"}'
+      operationId: postStartInvoiceExtraction
+      x-operation-id-source: derived
   /invoice-kpis/customer/{customer_id}:
     get:
       tags:
       - Invoices
       summary: Get invoice KPIs by customer_id
-      description: Get invoice KPIs by customer_id
       parameters:
       - in: path
         name: customer_id
@@ -240,12 +239,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceKpisCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-risk_assessment/customer/{customer_id}:
     get:
       tags:
       - Invoices
       summary: Get invoice risk assessments by customer_id
-      description: Get invoice risk assessments by customer_id
       parameters:
       - in: path
         name: customer_id
@@ -300,12 +300,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceRiskAssessmentCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-band_classification/customer/{customer_id}:
     get:
       tags:
       - Invoices
       summary: Get invoice band classification by customer_id
-      description: Get invoice band classification by customer_id
       parameters:
       - in: path
         name: customer_id
@@ -363,12 +364,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceBandClassificationCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-company-kpis/customer/{customer_id}:
     get:
       tags:
       - Invoices
       summary: Get invoice KPIs by company for a customer
-      description: Get invoice KPIs by company for a customer
       parameters:
       - in: path
         name: customer_id
@@ -421,12 +423,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceCompanyKpisCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-company-risk_assessment/customer/{customer_id}:
     get:
       tags:
       - Invoices
       summary: Get invoice risk assessments by company for a customer
-      description: Get invoice risk assessments by company for a customer
       parameters:
       - in: path
         name: customer_id
@@ -483,12 +486,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceCompanyRiskAssessmentCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-company-band_classification/customer/{customer_id}:
     get:
       tags:
       - Invoices
       summary: Get invoice band classifications by company for a customer
-      description: Get invoice band classifications by company for a customer
       parameters:
       - in: path
         name: customer_id
@@ -553,6 +557,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceCompanyBandClassificationCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-suggested-loan/customer/{customer_id}:
     get:
       tags:
@@ -608,6 +614,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceSuggestedLoanCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-suggested-loan-allocation/customer/{customer_id}:
     get:
       tags:
@@ -676,6 +684,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceSuggestedLoanAllocationCustomerByCustomerId
+      x-operation-id-source: derived
   /invoice-suggested-loan-summary/customer/{customer_id}:
     get:
       tags:
@@ -691,9 +701,7 @@ paths:
 
         - **UnallocatedRemainder** (`SuggestedLoan - TotalAllocated`)
 
-        computed for the specified `customer_id`.
-
-        '
+        computed for the specified `customer_id`.'
       parameters:
       - in: path
         name: customer_id
@@ -743,6 +751,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoiceSuggestedLoanSummaryCustomerByCustomerId
+      x-operation-id-source: derived
 components:
   schemas:
     InvoiceCompanyKpi:
@@ -763,105 +773,52 @@ components:
           - 'null'
           format: float
           example: 128450.55
-    InvoiceSuggestedLoan:
+    InvoiceCompanyBandClassification:
       type: object
       properties:
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-        band:
-          type: string
-          example: A
-        annual_revenue:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 1250000.0
-        multiplier:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 0.35
-        suggested_loan:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 437500.0
-    InvoiceKpi:
-      type: object
-      properties:
-        category:
-          type: string
-          example: Revenue
-        kpi:
-          type: string
-          example: Monthly revenue
-        value:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 123456.78
-        year:
-          type: integer
-          example: 2025
-        month:
-          type: integer
-          minimum: 1
-          maximum: 12
-          example: 9
-    InvoiceSuggestedLoanAllocation:
-      type: object
-      properties:
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
         company:
           type: string
           example: Acme Trading LLC
-        band:
-          type: string
-          example: A
+        activity_and_relationship_score:
+          type: integer
+          example: 4
+        spend_and_concentration_score:
+          type: integer
+          example: 3
+        payment_behaviour_score:
+          type: integer
+          example: 5
+        activity_and_relationship_score_value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.78
+        spend_and_concentration_score_value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.65
+        payment_behaviour_score_value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.92
         total_score:
           type:
           - number
           - 'null'
           format: float
           example: 3.98
-        due_amount:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 150000.0
-        multiplier:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 0.35
-        company_cap:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 120000.0
-        allocated_amount:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 120000.0
-        rank_by_score:
-          type:
-          - integer
-          - 'null'
-          example: 1
+        band:
+          type: string
+          example: A
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
     InvoiceSuggestedLoanSummary:
       type: object
       properties:
@@ -889,6 +846,76 @@ components:
           - 'null'
           format: float
           example: 252500.0
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+    InvoiceCompanyRiskAssessment:
+      type: object
+      properties:
+        company:
+          type: string
+          example: Acme Trading LLC
+        category:
+          type: string
+          example: Revenue & Income
+        rule:
+          type: string
+          example: Revenue consistency above threshold
+        value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.87
+        assessment:
+          type: string
+          example: Pass
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+    InvoiceKpi:
+      type: object
+      properties:
+        category:
+          type: string
+          example: Revenue
+        kpi:
+          type: string
+          example: Monthly revenue
+        value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 123456.78
+        year:
+          type: integer
+          example: 2025
+        month:
+          type: integer
+          minimum: 1
+          maximum: 12
+          example: 9
+    InvoiceRiskAssessment:
+      type: object
+      properties:
+        category:
+          type: string
+          example: Revenue & Income
+        rule:
+          type: string
+          example: Revenue consistency above threshold
+        value:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.87
+        assessment:
+          type: string
+          example: Pass
         customer_id:
           type: string
           format: uuid
@@ -960,96 +987,79 @@ components:
           type: string
           format: uuid
           example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-    InvoiceCompanyBandClassification:
+    InvoiceSuggestedLoan:
       type: object
       properties:
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+        band:
+          type: string
+          example: A
+        annual_revenue:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 1250000.0
+        multiplier:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 0.35
+        suggested_loan:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 437500.0
+    InvoiceSuggestedLoanAllocation:
+      type: object
+      properties:
+        customer_id:
+          type: string
+          format: uuid
+          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
         company:
           type: string
           example: Acme Trading LLC
-        activity_and_relationship_score:
-          type: integer
-          example: 4
-        spend_and_concentration_score:
-          type: integer
-          example: 3
-        payment_behaviour_score:
-          type: integer
-          example: 5
-        activity_and_relationship_score_value:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 0.78
-        spend_and_concentration_score_value:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 0.65
-        payment_behaviour_score_value:
-          type:
-          - number
-          - 'null'
-          format: float
-          example: 0.92
+        band:
+          type: string
+          example: A
         total_score:
           type:
           - number
           - 'null'
           format: float
           example: 3.98
-        band:
-          type: string
-          example: A
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-    InvoiceCompanyRiskAssessment:
-      type: object
-      properties:
-        company:
-          type: string
-          example: Acme Trading LLC
-        category:
-          type: string
-          example: Revenue & Income
-        rule:
-          type: string
-          example: Revenue consistency above threshold
-        value:
+        due_amount:
           type:
           - number
           - 'null'
           format: float
-          example: 0.87
-        assessment:
-          type: string
-          example: Pass
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
-    InvoiceRiskAssessment:
-      type: object
-      properties:
-        category:
-          type: string
-          example: Revenue & Income
-        rule:
-          type: string
-          example: Revenue consistency above threshold
-        value:
+          example: 150000.0
+        multiplier:
           type:
           - number
           - 'null'
           format: float
-          example: 0.87
-        assessment:
-          type: string
-          example: Pass
-        customer_id:
-          type: string
-          format: uuid
-          example: 03789f7f-6b22-4319-aee8-c4d76dc93fd1
+          example: 0.35
+        company_cap:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 120000.0
+        allocated_amount:
+          type:
+          - number
+          - 'null'
+          format: float
+          example: 120000.0
+        rank_by_score:
+          type:
+          - integer
+          - 'null'
+          example: 1

@@ -1,11 +1,10 @@
 openapi: 3.2.0
 info:
-  title: Orbii API - Foodics Business Category Assignment Rewaa Loan Amounts API
-  version: 1.0.2
-  description: API for retrieving micro loan KPIs, scoring, risk assessment, band classification, and related data.
+  title: Orbii API - Rewaa Rewaa Loan Amounts API
+  version: 1.0.4
+  description: API for Rewaa.
 servers:
-- url: https://api.foodics.orbii.ai/
-  description: Production Server
+- url: https://api.rewaa.orbii.ai/
 tags:
 - name: Rewaa Loan Amounts
 paths:
@@ -75,29 +74,60 @@ paths:
       tags:
       - Rewaa Loan Amounts
 components:
+  parameters:
+    PasswordQ:
+      in: query
+      name: password
+      required: true
+      schema:
+        type: string
+      description: Database password
+    PageQ:
+      in: query
+      name: page
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      description: 1-based page index
+    UserQ:
+      in: query
+      name: user
+      required: true
+      schema:
+        type: string
+      description: Database username (also used to derive container for some endpoints)
+    PageSizeQ:
+      in: query
+      name: page_size
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1000
+      description: Page size
+  responses:
+    BadRequest:
+      description: Bad request (missing/invalid parameters)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalError:
+      description: Unexpected server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    LoanAmountsRow:
+    Error:
       type: object
       properties:
-        schema_name:
+        error:
           type: string
-        Band:
-          type: string
-        Annual_Revenue_SAR_Last_12:
-          type: number
-          format: double
-        Max_Loan_Amount_SAR:
-          type: number
-          format: double
-        Daily_Payment_6m_SAR:
-          type: number
-          format: double
-        Daily_Payment_12m_SAR:
-          type: number
-          format: double
-        Daily_Payment_24m_SAR:
-          type: number
-          format: double
+      example:
+        error: Missing 'user' or 'password' query parameters
     PagedLoanAmounts:
       allOf:
       - $ref: '#/components/schemas/PageEnvelope'
@@ -122,56 +152,25 @@ components:
           type: array
           items:
             type: object
-    Error:
+    LoanAmountsRow:
       type: object
       properties:
-        error:
+        schema_name:
           type: string
-      example:
-        error: Missing 'user' or 'password' query parameters
-  parameters:
-    PageSizeQ:
-      in: query
-      name: page_size
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1000
-      description: Page size
-    UserQ:
-      in: query
-      name: user
-      required: true
-      schema:
-        type: string
-      description: Database username (also used to derive container for some endpoints)
-    PasswordQ:
-      in: query
-      name: password
-      required: true
-      schema:
-        type: string
-      description: Database password
-    PageQ:
-      in: query
-      name: page
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        default: 1
-      description: 1-based page index
-  responses:
-    BadRequest:
-      description: Bad request (missing/invalid parameters)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    InternalError:
-      description: Unexpected server error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+        Band:
+          type: string
+        Annual_Revenue_SAR_Last_12:
+          type: number
+          format: double
+        Max_Loan_Amount_SAR:
+          type: number
+          format: double
+        Daily_Payment_6m_SAR:
+          type: number
+          format: double
+        Daily_Payment_12m_SAR:
+          type: number
+          format: double
+        Daily_Payment_24m_SAR:
+          type: number
+          format: double
